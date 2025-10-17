@@ -352,7 +352,7 @@ html, body {
 }
 
 .section-title {
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 700;
   text-align: center;
   margin-bottom: 60px;
@@ -362,7 +362,7 @@ html, body {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin-bottom: 40px;
 }
@@ -371,7 +371,7 @@ html, body {
   background: var(--surface);
   border: 1.5px solid var(--border);
   border-radius: 24px;
-  padding: 40px 28px;
+  padding: 48px 32px;
   text-align: center;
   text-decoration: none;
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -393,8 +393,8 @@ html, body {
 }
 
 .service-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 40px rgba(49, 130, 246, 0.15);
+  transform: translateY(-16px);
+  box-shadow: 0 24px 48px rgba(49, 130, 246, 0.2);
   border-color: var(--primary);
 }
 
@@ -404,47 +404,48 @@ html, body {
 }
 
 .service-card-highlight:hover {
-  box-shadow: 0 20px 40px rgba(251, 191, 36, 0.2);
+  box-shadow: 0 24px 48px rgba(251, 191, 36, 0.25);
 }
 
 .service-icon {
-  font-size: 56px;
-  margin-bottom: 16px;
+  font-size: 64px;
+  margin-bottom: 20px;
   display: inline-block;
   animation: bounce 3s ease-in-out infinite;
 }
 
 .service-card h3 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .service-card p {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-secondary);
   margin: 0;
+  line-height: 1.6;
 }
 
 .badge {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 16px;
+  right: 16px;
   background: linear-gradient(135deg, #ff6b6b, #ff8787);
   color: white;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
 }
 
 /* Latest Benefits Section */
 .latest-section {
-  padding: 80px 24px;
+  padding: 100px 24px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 60px auto 0;
   background: linear-gradient(135deg, #f0f4ff 0%, #e0eaff 100%);
   border-radius: 32px;
 }
@@ -453,13 +454,13 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 48px;
+  margin-bottom: 56px;
   flex-wrap: wrap;
   gap: 20px;
 }
 
 .latest-header h2 {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
   color: var(--text-primary);
   margin: 0;
@@ -469,7 +470,7 @@ html, body {
   color: var(--primary);
   text-decoration: none;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -482,21 +483,21 @@ html, body {
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 .benefit-card {
   background: white;
-  border-radius: 20px;
-  padding: 28px 24px;
+  border-radius: 24px;
+  padding: 36px 28px;
   text-decoration: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   border: 1px solid transparent;
   position: relative;
 }
@@ -507,9 +508,9 @@ html, body {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: 4px;
   background: linear-gradient(90deg, var(--primary), var(--accent));
-  border-radius: 20px 20px 0 0;
+  border-radius: 24px 24px 0 0;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
@@ -520,37 +521,37 @@ html, body {
 }
 
 .benefit-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 32px rgba(49, 130, 246, 0.15);
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(49, 130, 246, 0.2);
   border-color: var(--primary);
 }
 
 .benefit-icon {
-  font-size: 40px;
-  margin-bottom: 12px;
+  font-size: 48px;
+  margin-bottom: 16px;
 }
 
 .benefit-card h4 {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .benefit-card p {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 700;
   color: var(--primary);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .benefit-note {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-secondary);
   display: block;
 }
 
-/* 모바일 반응형 */
+/* 모바일 반응형 (유지) */
 @media (max-width: 768px) {
   .services {
     padding: 60px 20px;
@@ -585,7 +586,7 @@ html, body {
   
   .latest-section {
     padding: 60px 20px;
-    margin: 0 20px;
+    margin: 40px 20px 0;
     border-radius: 24px;
   }
   
