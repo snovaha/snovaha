@@ -74,14 +74,22 @@
 ├─────────────────────────────────────────┤
 │  ┌───────────────┐                     │
 │  │  snovaha      │  메인 홈페이지      │
-│  └───────────────┘                     │
+│  └───────────────┘  (2025 트렌드)      │
 │  ┌───────────────┐                     │
 │  │  snovaha-     │  초대장 서비스      │
-│  │  invitation   │                     │
+│  │  invitation   │  (갤러리, 음악)    │
 │  └───────────────┘                     │
 │  ┌───────────────┐                     │
 │  │  snovaha-     │  각도법 서비스      │
-│  │  nub-theory   │                     │
+│  │  nub-theory   │  (성별 예측)        │
+│  └───────────────┘                     │
+│  ┌───────────────┐                     │
+│  │  snovaha-     │  육아 혜택 서비스   │
+│  │  benefits     │  (정부 지원금)      │
+│  └───────────────┘                     │
+│  ┌───────────────┐                     │
+│  │  snovaha-     │  육아 커뮤니티      │
+│  │  community    │  (Coming Soon)      │
 │  └───────────────┘                     │
 └─────────────────────────────────────────┘
 ```
@@ -93,12 +101,27 @@
 ```
 S3 Bucket: 1st-birthday-invitation-20251011
 ├── index.html              # 메인 홈
+├── favicon.svg             # 글로우 스타 듀얼 로고
 ├── assets/                 # 메인 에셋
+│   ├── css/
+│   │   └── home.css        # 반응형 디자인 (PC/모바일)
+│   └── js/
+│       └── home.js
 ├── invitation/             # 초대장 서비스
 │   ├── index.html
+│   ├── favicon.svg
 │   └── assets/
-└── nub-theory/             # 각도법 서비스
+├── nub-theory/             # 각도법 서비스
+│   ├── index.html
+│   ├── favicon.svg
+│   └── assets/
+├── benefits/               # 육아 혜택 서비스
+│   ├── index.html
+│   ├── favicon.svg
+│   └── assets/
+└── community/              # 육아 커뮤니티
     ├── index.html
+    ├── favicon.svg
     └── assets/
 ```
 
@@ -423,6 +446,55 @@ gap: 16px, 24px, 32px, 48px, 64px
 
 ## 주요 기능 구현
 
+### 0. 메인 홈페이지 (Main)
+
+**히어로 섹션**
+```
+- 밝은 블루/핑크/피치 그라데이션 배경
+- "SNOVAHA" 브랜드 텍스트 (블루→퍼플 그라데이션)
+- "임신부터 육아까지, 모든 순간을 함께합니다"
+- 부드러운 별, 하트, 동그라미 패턴
+```
+
+**서비스 그리드 (Services)**
+```
+PC: 4열 고정 그리드
+모바일: 2열 반응형
+
+1. 돌잔치 초대장 (🎉)
+   - 감성적인 모바일 초대장
+   
+2. 각도법 (👶)
+   - 임신 초기 성별 예측
+   
+3. 육아 혜택 (🎁) - 강조됨 (노란색)
+   - 정부 지원금 & 할인
+   
+4. 커뮤니티 (💬)
+   - 육아 팁 & 정보 공유
+```
+
+**혜택 섹션 (Benefits)**
+```
+PC: 정확한 3x2 그리드 (6개 카드)
+모바일: 2x3 그리드
+
+1. 첫만남 이용권 (🎫) - 200만원
+2. 6+6 부모육아휴직제 (👨‍👩‍👧) - 월 450만원
+3. 부모급여 (💰) - 월 100만원
+4. 아동수당 (🎁) - 월 10만원
+5. 다둥이 행복카드 (💳) - 최대 50% 할인
+6. 서울아기 건강첫걸음 (🌟) - 70만원
+
+모든 혜택 카드는 실제 정부 기관 링크 연결
+```
+
+**디자인 특징**
+- 뉘앙스 호버 애니메이션 (큐빅 베지어)
+- 상단 라인 호버 효과
+- 프리미엄한 그림자와 간격
+- 완전 반응형 (PC 최적화)
+
 ### 1. 초대장 (invitation)
 
 **라이트박스**
@@ -614,11 +686,15 @@ magick convert gallery-1.jpg -quality 85 gallery-1.webp
 - 메인: https://github.com/snovaha/snovaha
 - 초대장: https://github.com/snovaha/snovaha-invitation
 - 각도법: https://github.com/snovaha/snovaha-nub-theory
+- 육아혜택: https://github.com/snovaha/snovaha-benefits
+- 커뮤니티: https://github.com/snovaha/snovaha-community
 
 ### 웹사이트
 - 메인: https://www.snovaha.com
 - 초대장: https://www.snovaha.com/invitation/
 - 각도법: https://www.snovaha.com/nub-theory/
+- 육아혜택: https://www.snovaha.com/benefits/
+- 커뮤니티: https://www.snovaha.com/community/
 
 ### AWS
 - Region: ap-northeast-2 (Seoul)
@@ -633,7 +709,35 @@ MIT License - 자유롭게 사용하세요!
 
 ---
 
-**문서 버전**: 1.0  
+**문서 버전**: 2.0  
 **최종 업데이트**: 2025-10-17  
 **작성자**: SNOVAHA Team
+
+### 최근 업데이트 (v2.0)
+
+**2025-10-17**:
+- [x] PC 레이아웃 완전 개선
+  - 서비스 카드 4열 고정 그리드
+  - 혜택 카드 3x2 정확한 그리드
+  - 더 큰 아이콘과 타이포그래피
+  - 더 강한 호버 애니메이션
+
+- [x] 메인 홈페이지 기능 추가
+  - 밝은 히어로 배경 (블루/핑크/피치)
+  - 4개 서비스 카드 (이모지 기반)
+  - 6개 정부 혜택 카드 (실제 링크)
+  - 완전 반응형 (PC/모바일)
+
+- [x] 레포지토리 구조 확장
+  - snovaha (메인)
+  - snovaha-invitation (초대장)
+  - snovaha-nub-theory (각도법)
+  - snovaha-benefits (육아혜택)
+  - snovaha-community (커뮤니티)
+
+- [x] 문서화 완료
+  - 아키텍처 설명
+  - 배포 프로세스
+  - 기술 스택
+  - 문제 해결 가이드
 
