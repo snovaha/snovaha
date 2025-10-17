@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한우주 첫 번째 생일 🎂</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-image">
+                <img src="../assets/images/hero.jpg" alt="한우주 첫 생일" class="hero-photo">
+                <div class="hero-overlay">
+                    <h1 class="hero-title">Happy 1st Birthday</h1>
+                    <h2 class="hero-name">한우주</h2>
+                    <p class="hero-subtitle">우리 소중한 우주의 첫 번째 생일을 함께 축하해주세요</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Invitation Section -->
+    <section id="invitation" class="invitation-section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">초대장</h2>
+                <div class="invitation-text">
+                    <p class="greeting">안녕하세요,</p>
+                    <p class="message">
+                        소중한 가족분들을 모시고<br>
+                        우주의 첫 번째 생일을<br>
+                        함께 축하하고자 합니다.
+                    </p>
+                    <p class="message">
+                        지난 1년 동안 많은 사랑과 관심을<br>
+                        보내주신 덕분에 건강하게<br>
+                        자랄 수 있었습니다.<br>
+                    </p>
+                    <p class="message">
+                        바쁘시겠지만 잠시 시간을 내어<br>
+                        축하의 자리에 함께해 주시면<br>
+                        더없는 기쁨이겠습니다.
+                    </p>
+                    <div class="parents-name">
+                        <p>아빠 한흥석, 엄마 안보경 올림</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Date Section -->
+    <section id="date" class="date-section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">돌잔치 일정</h2>
+                
+                <div class="date-info">
+                    <div class="main-date">
+                        <div class="date-number">2025.10.11(토)</div>
+                        <div class="date-time">오후 12시 00분</div>
+                    </div>
+                    <div class="countdown-container">
+                        <p class="countdown-label">돌잔치까지</p>
+                        <div id="countdown" class="countdown">
+                             <div class="countdown-item">
+                                <span id="days">0</span>
+                                <label>일</label>
+                            </div>
+                            <div class="countdown-item">
+                                <span id="hours">0</span>
+                                <label>시간</label>
+                            </div>
+                            <div class="countdown-item">
+                                <span id="minutes">0</span>
+                                <label>분</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location-section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">오시는 길</h2>
+                    <div class="location-info">
+                        <div class="location-details">
+                            <div class="location-card">
+                                <h3>🏨 주소</h3>
+                                <p>서울특별시 마포구 마포대로 8</p>
+                                <p>호텔나루서울엠갤러리 22층 부아쟁 레스토랑</p>
+                                <a href="https://naver.me/GvcTFv2T" target="_blank" class="location-link">📍 네이버 지도 보기</a>
+                            </div>
+                            <div class="location-card">
+                                <h3>🚗 주차 안내</h3>
+                                <p>1층 발렛주차 (무료)</p>
+                                <p>호텔 직원에게 돌잔치 참석 안내</p>
+                            </div>
+                            <div class="location-card">
+                                <h3>🚇 대중교통</h3>
+                                <p>지하철 5호선 마포역 4번 출구</p>
+                                <p>도보 5분 거리</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">소중한 순간들</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openLightbox(0)">
+                        <img src="../assets/images/gallery/gallery-1.jpg" alt="갤러리 사진 1" class="gallery-photo">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(1)">
+                        <img src="../assets/images/gallery/gallery-2.jpg" alt="갤러리 사진 2" class="gallery-photo">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(2)">
+                        <img src="../assets/images/gallery/gallery-3.jpg" alt="갤러리 사진 3" class="gallery-photo">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(3)">
+                        <img src="../assets/images/gallery/gallery-4.jpg" alt="갤러리 사진 4" class="gallery-photo">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(4)">
+                        <img src="../assets/images/gallery/gallery-5.jpg" alt="갤러리 사진 5" class="gallery-photo">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(5)">
+                        <img src="../assets/images/gallery/gallery-6.jpg" alt="갤러리 사진 6" class="gallery-photo">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(6)">
+                        <img src="../assets/images/gallery/gallery-7.jpg" alt="갤러리 사진 7" class="gallery-photo">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(7)">
+                        <img src="../assets/images/gallery/gallery-8.jpg" alt="갤러리 사진 8" class="gallery-photo">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(8)">
+                        <img src="../assets/images/gallery/gallery-9.jpg" alt="갤러리 사진 9" class="gallery-photo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-message">소중한 분들과 함께하는 특별한 하루가 되길 바랍니다 💕</p>
+                <p class="footer-contact">문의: 010-2754-3069 (한흥석)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Menu -->
+    <nav class="floating-nav">
+        <a href="#hero" class="nav-item">🏠</a>
+        <a href="#invitation" class="nav-item">💌</a>
+        <a href="#date" class="nav-item">📅</a>
+        <a href="#location" class="nav-item">📍</a>
+        <a href="#gallery" class="nav-item">📷</a>
+    </nav>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <img id="lightbox-image" src="" alt="갤러리 이미지">
+            <button class="lightbox-prev" onclick="prevImage()">&#8249;</button>
+            <button class="lightbox-next" onclick="nextImage()">&#8250;</button>
+            <div class="lightbox-counter">
+                <span id="lightbox-current">1</span> / <span id="lightbox-total">9</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="background-music" loop>
+        <source src="../assets/audio/background.mp4" type="audio/mp4">
+        <source src="../assets/audio/background.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Music Control Button -->
+    <button id="music-toggle" class="music-control">🔇</button>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>
+
