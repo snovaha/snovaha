@@ -245,13 +245,21 @@ html, body {
 }
 
 .tagline {
-  font-size: 20px;
+  font-size: 22px;
   color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 40px;
-  font-weight: 500;
+  margin-bottom: 16px;
+  font-weight: 600;
   animation: fadeInUp 0.8s ease 0.2s both;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
   letter-spacing: -0.01em;
+}
+
+.tagline-sub {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 400;
+  animation: fadeInUp 0.8s ease 0.3s both;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .cta-group {
@@ -338,7 +346,235 @@ html, body {
   box-shadow: var(--shadow-md);
 }
 
-/* Features Section */
+/* Services Grid */
+.services {
+  padding: 80px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 40px 32px;
+  text-align: center;
+  text-decoration: none;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.service-card-highlight {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-color: #fbbf24;
+}
+
+.service-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.service-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, #ff6b6b, #ff8787);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+/* Latest Benefits Section */
+.latest-section {
+  padding: 80px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e0eaff 100%);
+  border-radius: 24px;
+}
+
+.latest-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.latest-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.link-more {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.link-more:hover {
+  gap: 12px;
+}
+
+.benefits-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.benefit-item {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.benefit-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.benefit-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.benefit-item h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.benefit-item p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .services {
+    padding: 60px 20px;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .service-card {
+    padding: 28px 20px;
+  }
+  
+  .service-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+  
+  .service-card h3 {
+    font-size: 16px;
+  }
+  
+  .service-card p {
+    font-size: 13px;
+  }
+  
+  .latest-section {
+    padding: 60px 20px;
+    margin: 0 20px;
+  }
+  
+  .latest-header h2 {
+    font-size: 20px;
+  }
+  
+  .benefits-preview {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .benefit-item {
+    padding: 20px;
+  }
+  
+  .tagline {
+    font-size: 20px;
+  }
+  
+  .tagline-sub {
+    font-size: 14px;
+  }
+}
+
+/* Features Section (제거 예정) */
 .features {
   padding: 80px 24px;
   max-width: 1200px;
