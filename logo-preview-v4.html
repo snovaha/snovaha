@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNOVAHA 로고 30가지 (v4) - 프리미엄 에디션</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            padding: 60px 20px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1600px; margin: 0 auto; }
+        h1 { 
+            text-align: center; 
+            margin-bottom: 12px; 
+            font-size: 56px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #94a3b8;
+            margin-bottom: 60px;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 28px; 
+        }
+        .logo-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 36px;
+            border: 1px solid rgba(255,255,255,0.12);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .logo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top left, rgba(96,165,250,0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .logo-card:hover::before {
+            opacity: 1;
+        }
+        .logo-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(96,165,250,0.4);
+            box-shadow: 0 20px 60px rgba(96,165,250,0.2);
+        }
+        .logo-card.selected {
+            border: 2px solid #60a5fa;
+            background: linear-gradient(135deg, rgba(96,165,250,0.15) 0%, rgba(167,139,250,0.1) 100%);
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 24px 72px rgba(96,165,250,0.3);
+        }
+        .logo-number {
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .logo-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 140px;
+            margin-bottom: 24px;
+            background: radial-gradient(ellipse at center, rgba(96,165,250,0.05) 0%, transparent 70%);
+            border-radius: 16px;
+            position: relative;
+        }
+        .logo-display::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(96,165,250,0.2), rgba(167,139,250,0.1));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .logo-card:hover .logo-display::after {
+            opacity: 1;
+        }
+        .logo-name {
+            font-size: 16px;
+            color: #e2e8f0;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+        .selected-info {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+            color: white;
+            padding: 24px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(59,130,246,0.4);
+            display: none;
+            font-weight: 700;
+            font-size: 17px;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .selected-info.show { 
+            display: block; 
+            animation: slideInScale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        @keyframes slideInScale {
+            from { 
+                transform: translateY(30px) scale(0.9); 
+                opacity: 0; 
+            }
+            to { 
+                transform: translateY(0) scale(1); 
+                opacity: 1; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SNOVAHA PREMIUM</h1>
+        <p class="subtitle">트윈 스타일 · 프리미엄 에디션 · 30 Designs</p>
+        
+        <div class="grid">
+            <!-- 1. 글래스 듀얼 스타 -->
+            <div class="logo-card" onclick="selectLogo(1)">
+                <div class="logo-number">Design #1</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <defs>
+                            <linearGradient id="g1-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#60a5fa"/>
+                                <stop offset="100%" stop-color="#3b82f6"/>
+                            </linearGradient>
+                            <linearGradient id="g1-2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#a78bfa"/>
+                                <stop offset="100%" stop-color="#8b5cf6"/>
+                            </linearGradient>
+                            <filter id="glow1">
+                                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <path d="M25 15 L28 25 L38 26 L31 32 L33 42 L25 36 L17 42 L19 32 L12 26 L22 25 Z" fill="url(#g1-1)" filter="url(#glow1)"/>
+                        <path d="M35 20 L38 30 L48 31 L41 37 L43 47 L35 41 L27 47 L29 37 L22 31 L32 30 Z" fill="url(#g1-2)" opacity="0.6" filter="url(#glow1)"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">글래스 듀얼 스타</div>
+            </div>
+
+            <!-- 2. 네온 트윈 -->
+            <div class="logo-card" onclick="selectLogo(2)">
+                <div class="logo-number">Design #2</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <defs>
+                            <filter id="neon2">
+                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <circle cx="25" cy="30" r="14" stroke="#60a5fa" stroke-width="3" fill="none" filter="url(#neon2)"/>
+                        <circle cx="37" cy="30" r="14" stroke="#a78bfa" stroke-width="3" fill="none" opacity="0.7" filter="url(#neon2)"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">네온 트윈</div>
+            </div>
+
+            <!-- 3. 크리스탈 오버랩 -->
+            <div class="logo-card" onclick="selectLogo(3)">
+                <div class="logo-number">Design #3</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <defs>
+                            <linearGradient id="g3-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#60a5fa"/>
+                                <stop offset="50%" stop-color="#3b82f6"/>
+                                <stop offset="100%" stop-color="#2563eb"/>
+                            </linearGradient>
+                            <linearGradient id="g3-2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#c084fc"/>
+                                <stop offset="100%" stop-color="#a855f7"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M25 12 L38 20 L35 36 L25 44 L15 36 L12 20 Z" fill="url(#g3-1)" opacity="0.9"/>
+                        <path d="M32 18 L45 26 L42 42 L32 50 L22 42 L19 26 Z" fill="url(#g3-2)" opacity="0.6"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">크리스탈 오버랩</div>
+            </div>
+
+            <!-- 4. 홀로그램 서클 -->
+            <div class="logo-card" onclick="selectLogo(4)">
+                <div class="logo-number">Design #4</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <defs>
+                            <radialGradient id="g4-1">
+                                <stop offset="0%" stop-color="#60a5fa"/>
+                                <stop offset="100%" stop-color="#3b82f6"/>
+                            </radialGradient>
+                            <radialGradient id="g4-2">
+                                <stop offset="0%" stop-color="#f0abfc"/>
+                                <stop offset="100%" stop-color="#e879f9"/>
+                            </radialGradient>
+                        </defs>
+                        <circle cx="24" cy="30" r="13" fill="url(#g4-1)" opacity="0.8"/>
+                        <circle cx="36" cy="30" r="13" fill="url(#g4-2)" opacity="0.6"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">홀로그램 서클</div>
+            </div>
+
+            <!-- 5. 그라디언트 헥스 -->
+            <div class="logo-card" onclick="selectLogo(5)">
+                <div class="logo-number">Design #5</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <defs>
+                            <linearGradient id="g5-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#60a5fa"/>
+                                <stop offset="100%" stop-color="#3b82f6"/>
+                            </linearGradient>
+                            <linearGradient id="g5-2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#a78bfa"/>
+                                <stop offset="100%" stop-color="#8b5cf6"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M25 15 L35 20 L35 32 L25 37 L15 32 L15 20 Z" fill="url(#g5-1)" opacity="0.9"/>
+                        <path d="M32 20 L42 25 L42 37 L32 42 L22 37 L22 25 Z" fill="url(#g5-2)" opacity="0.65"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">그라디언트 헥스</div>
+            </div>
+
+            <!-- 6. 오로라 다이아 -->
+            <div class="logo-card" onclick="selectLogo(6)">
+                <div class="logo-number">Design #6</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <defs>
+                            <linearGradient id="g6-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#60a5fa"/>
+                                <stop offset="50%" stop-color="#a78bfa"/>
+                                <stop offset="100%" stop-color="#f0abfc"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M25 12 L40 30 L25 48 L10 30 Z" fill="url(#g6-1)" opacity="0.85"/>
+                        <path d="M32 18 L47 30 L32 42 L17 30 Z" fill="url(#g6-1)" opacity="0.55"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">오로라 다이아</div>
+            </div>
+
+            <!-- 7. 플라즈마 링 -->
+            <div class="logo-card" onclick="selectLogo(7)">
+                <div class="logo-number">Design #7</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <defs>
+                            <filter id="plasma7">
+                                <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <circle cx="24" cy="30" r="13" stroke="#60a5fa" stroke-width="3.5" fill="none" filter="url(#plasma7)" opacity="0.9"/>
+                        <circle cx="36" cy="30" r="13" stroke="#c084fc" stroke-width="3.5" fill="none" filter="url(#plasma7)" opacity="0.7"/>
+                        <circle cx="30" cy="30" r="5" fill="#e0e7ff"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">플라즈마 링</div>
+            </div>
+
+            <!-- 8. 스펙트럼 트윈 -->
+            <div class="logo-card" onclick="selectLogo(8)">
+                <div class="logo-number">Design #8</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <defs>
+                            <linearGradient id="g8-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#60a5fa"/>
+                                <stop offset="33%" stop-color="#a78bfa"/>
+                                <stop offset="66%" stop-color="#f0abfc"/>
+                                <stop offset="100%" stop-color="#fb7185"/>
+                            </linearGradient>
+                        </defs>
+                        <rect x="15" y="18" width="24" height="24" rx="4" fill="url(#g8-1)" opacity="0.9"/>
+                        <rect x="25" y="18" width="24" height="24" rx="4" fill="url(#g8-1)" opacity="0.6"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">스펙트럼 트윈</div>
+            </div>
+
+            <!-- 9. 사이버 펜타곤 -->
+            <div class="logo-card" onclick="selectLogo(9)">
+                <div class="logo-number">Design #9</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <defs>
+                            <linearGradient id="g9-1">
+                                <stop offset="0%" stop-color="#60a5fa"/>
+                                <stop offset="100%" stop-color="#3b82f6"/>
+                            </linearGradient>
+                            <linearGradient id="g9-2">
+                                <stop offset="0%" stop-color="#c084fc"/>
+                                <stop offset="100%" stop-color="#9333ea"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M30 14 L44 22 L40 38 L26 44 L14 34 L18 20 Z" fill="url(#g9-1)" opacity="0.85"/>
+                        <path d="M36 20 L48 27 L45 41 L33 46 L22 38 L25 25 Z" fill="url(#g9-2)" opacity="0.6"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">사이버 펜타곤</div>
+            </div>
+
+            <!-- 10. 글로우 버블 -->
+            <div class="logo-card" onclick="selectLogo(10)">
+                <div class="logo-number">Design #10</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <defs>
+                            <radialGradient id="g10-1">
+                                <stop offset="0%" stop-color="#93c5fd"/>
+                                <stop offset="100%" stop-color="#3b82f6"/>
+                            </radialGradient>
+                            <radialGradient id="g10-2">
+                                <stop offset="0%" stop-color="#ddd6fe"/>
+                                <stop offset="100%" stop-color="#8b5cf6"/>
+                            </radialGradient>
+                            <filter id="glow10">
+                                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <circle cx="22" cy="28" r="10" fill="url(#g10-1)" filter="url(#glow10)" opacity="0.9"/>
+                        <circle cx="32" cy="32" r="12" fill="url(#g10-2)" filter="url(#glow10)" opacity="0.7"/>
+                        <circle cx="38" cy="24" r="8" fill="url(#g10-1)" filter="url(#glow10)" opacity="0.6"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">글로우 버블</div>
+            </div>
+
+            <!-- 11. 프로즌 스타 -->
+            <div class="logo-card" onclick="selectLogo(11)">
+                <div class="logo-number">Design #11</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <defs>
+                            <linearGradient id="g11-1">
+                                <stop offset="0%" stop-color="#dbeafe"/>
+                                <stop offset="100%" stop-color="#3b82f6"/>
+                            </linearGradient>
+                            <linearGradient id="g11-2">
+                                <stop offset="0%" stop-color="#e9d5ff"/>
+                                <stop offset="100%" stop-color="#a855f7"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M24 14 L27 24 L37 25 L30 31 L32 41 L24 35 L16 41 L18 31 L11 25 L21 24 Z" fill="url(#g11-1)" opacity="0.95"/>
+                        <path d="M32 18 L35 28 L45 29 L38 35 L40 45 L32 39 L24 45 L26 35 L19 29 L29 28 Z" fill="url(#g11-2)" opacity="0.65"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">프로즌 스타</div>
+            </div>
+
+            <!-- 12. 트리플 오버랩 -->
+            <div class="logo-card" onclick="selectLogo(12)">
+                <div class="logo-number">Design #12</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <circle cx="22" cy="30" r="12" fill="#60a5fa" opacity="0.85"/>
+                        <circle cx="32" cy="30" r="12" fill="#a78bfa" opacity="0.7"/>
+                        <circle cx="42" cy="30" r="12" fill="#f0abfc" opacity="0.55"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">트리플 오버랩</div>
+            </div>
+
+            <!-- 13. 벤 다이어그램 프로 -->
+            <div class="logo-card" onclick="selectLogo(13)">
+                <div class="logo-number">Design #13</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <defs>
+                            <filter id="blur13">
+                                <feGaussianBlur stdDeviation="1.5"/>
+                            </filter>
+                        </defs>
+                        <circle cx="24" cy="30" r="13" fill="#60a5fa" opacity="0.6" filter="url(#blur13)"/>
+                        <circle cx="36" cy="30" r="13" fill="#c084fc" opacity="0.6" filter="url(#blur13)"/>
+                        <circle cx="30" cy="30" r="8" fill="#f0abfc" opacity="0.8"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">벤 다이어그램 프로</div>
+            </div>
+
+            <!-- 14. 스타더스트 -->
+            <div class="logo-card" onclick="selectLogo(14)">
+                <div class="logo-number">Design #14</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <path d="M20 18 L22 24 L28 25 L24 29 L25 35 L20 31 L15 35 L16 29 L12 25 L18 24 Z" fill="#93c5fd" opacity="0.5"/>
+                        <path d="M28 20 L30 26 L36 27 L32 31 L33 37 L28 33 L23 37 L24 31 L20 27 L26 26 Z" fill="#60a5fa" opacity="0.7"/>
+                        <path d="M36 18 L38 24 L44 25 L40 29 L41 35 L36 31 L31 35 L32 29 L28 25 L34 24 Z" fill="#3b82f6" opacity="0.9"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">스타더스트</div>
+            </div>
+
+            <!-- 15. 레인보우 헥스 -->
+            <div class="logo-card" onclick="selectLogo(15)">
+                <div class="logo-number">Design #15</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <defs>
+                            <linearGradient id="g15-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#60a5fa"/>
+                                <stop offset="25%" stop-color="#a78bfa"/>
+                                <stop offset="50%" stop-color="#f0abfc"/>
+                                <stop offset="75%" stop-color="#fb7185"/>
+                                <stop offset="100%" stop-color="#fbbf24"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M25 16 L34 21 L34 31 L25 36 L16 31 L16 21 Z" fill="url(#g15-1)" opacity="0.9"/>
+                        <path d="M32 21 L41 26 L41 36 L32 41 L23 36 L23 26 Z" fill="url(#g15-1)" opacity="0.6"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">레인보우 헥스</div>
+            </div>
+
+            <!-- 16. 다이아몬드 클러스터 -->
+            <div class="logo-card" onclick="selectLogo(16)">
+                <div class="logo-number">Design #16</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <path d="M20 12 L30 30 L20 48 L10 30 Z" fill="#60a5fa" opacity="0.85"/>
+                        <path d="M30 18 L40 30 L30 42 L20 30 Z" fill="#a78bfa" opacity="0.7"/>
+                        <path d="M40 12 L50 30 L40 48 L30 30 Z" fill="#f0abfc" opacity="0.55"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">다이아몬드 클러스터</div>
+            </div>
+
+            <!-- 17. 옵티컬 링 -->
+            <div class="logo-card" onclick="selectLogo(17)">
+                <div class="logo-number">Design #17</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <circle cx="30" cy="30" r="18" stroke="#60a5fa" stroke-width="3" fill="none" opacity="0.9"/>
+                        <circle cx="30" cy="30" r="12" stroke="#a78bfa" stroke-width="3" fill="none" opacity="0.7"/>
+                        <circle cx="30" cy="30" r="6" fill="#c084fc" opacity="0.9"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">옵티컬 링</div>
+            </div>
+
+            <!-- 18. 퓨전 트라이앵글 -->
+            <div class="logo-card" onclick="selectLogo(18)">
+                <div class="logo-number">Design #18</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <defs>
+                            <linearGradient id="g18-1">
+                                <stop offset="0%" stop-color="#60a5fa"/>
+                                <stop offset="100%" stop-color="#3b82f6"/>
+                            </linearGradient>
+                            <linearGradient id="g18-2">
+                                <stop offset="0%" stop-color="#c084fc"/>
+                                <stop offset="100%" stop-color="#9333ea"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M25 12 L42 45 L8 45 Z" fill="url(#g18-1)" opacity="0.85"/>
+                        <path d="M32 18 L49 51 L15 51 Z" fill="url(#g18-2)" opacity="0.6"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">퓨전 트라이앵글</div>
+            </div>
+
+            <!-- 19. 플라워 블룸 -->
+            <div class="logo-card" onclick="selectLogo(19)">
+                <div class="logo-number">Design #19</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <circle cx="30" cy="20" r="8" fill="#60a5fa" opacity="0.8"/>
+                        <circle cx="40" cy="30" r="8" fill="#60a5fa" opacity="0.75"/>
+                        <circle cx="30" cy="40" r="8" fill="#a78bfa" opacity="0.7"/>
+                        <circle cx="20" cy="30" r="8" fill="#a78bfa" opacity="0.65"/>
+                        <circle cx="30" cy="30" r="7" fill="#c084fc" opacity="0.9"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">플라워 블룸</div>
+            </div>
+
+            <!-- 20. 크로스 글로우 -->
+            <div class="logo-card" onclick="selectLogo(20)">
+                <div class="logo-number">Design #20</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <defs>
+                            <filter id="glow20">
+                                <feGaussianBlur stdDeviation="3"/>
+                            </filter>
+                            <linearGradient id="g20-1">
+                                <stop offset="0%" stop-color="#60a5fa"/>
+                                <stop offset="100%" stop-color="#3b82f6"/>
+                            </linearGradient>
+                            <linearGradient id="g20-2">
+                                <stop offset="0%" stop-color="#c084fc"/>
+                                <stop offset="100%" stop-color="#9333ea"/>
+                            </linearGradient>
+                        </defs>
+                        <rect x="22" y="14" width="10" height="32" rx="3" fill="url(#g20-1)" filter="url(#glow20)" opacity="0.9"/>
+                        <rect x="14" y="22" width="32" height="10" rx="3" fill="url(#g20-2)" filter="url(#glow20)" opacity="0.75"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">크로스 글로우</div>
+            </div>
+
+            <!-- 21. 사파이어 듀얼 -->
+            <div class="logo-card" onclick="selectLogo(21)">
+                <div class="logo-number">Design #21</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <defs>
+                            <radialGradient id="g21-1">
+                                <stop offset="0%" stop-color="#93c5fd"/>
+                                <stop offset="100%" stop-color="#1e40af"/>
+                            </radialGradient>
+                            <radialGradient id="g21-2">
+                                <stop offset="0%" stop-color="#ddd6fe"/>
+                                <stop offset="100%" stop-color="#6b21a8"/>
+                            </radialGradient>
+                        </defs>
+                        <circle cx="24" cy="30" r="14" fill="url(#g21-1)" opacity="0.9"/>
+                        <circle cx="36" cy="30" r="14" fill="url(#g21-2)" opacity="0.7"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">사파이어 듀얼</div>
+            </div>
+
+            <!-- 22. 홀로 스퀘어 -->
+            <div class="logo-card" onclick="selectLogo(22)">
+                <div class="logo-number">Design #22</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <rect x="16" y="18" width="24" height="24" rx="5" fill="#60a5fa" opacity="0.85" transform="rotate(-10 28 30)"/>
+                        <rect x="20" y="18" width="24" height="24" rx="5" fill="#a78bfa" opacity="0.7" transform="rotate(10 32 30)"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">홀로 스퀘어</div>
+            </div>
+
+            <!-- 23. 에너지 버스트 -->
+            <div class="logo-card" onclick="selectLogo(23)">
+                <div class="logo-number">Design #23</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <defs>
+                            <filter id="glow23">
+                                <feGaussianBlur stdDeviation="2.5"/>
+                            </filter>
+                        </defs>
+                        <path d="M30 18 L33 28 M30 42 L33 32 M18 30 L28 33 M42 30 L32 33" stroke="#60a5fa" stroke-width="4" stroke-linecap="round" filter="url(#glow23)" opacity="0.9"/>
+                        <path d="M22 22 L28 28 M38 38 L32 32 M38 22 L32 28 M22 38 L28 32" stroke="#a78bfa" stroke-width="3.5" stroke-linecap="round" filter="url(#glow23)" opacity="0.75"/>
+                        <circle cx="30" cy="30" r="6" fill="#c084fc" opacity="0.95"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">에너지 버스트</div>
+            </div>
+
+            <!-- 24. 크레센트 페어 -->
+            <div class="logo-card" onclick="selectLogo(24)">
+                <div class="logo-number">Design #24</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <defs>
+                            <linearGradient id="g24-1">
+                                <stop offset="0%" stop-color="#60a5fa"/>
+                                <stop offset="100%" stop-color="#3b82f6"/>
+                            </linearGradient>
+                            <linearGradient id="g24-2">
+                                <stop offset="0%" stop-color="#f0abfc"/>
+                                <stop offset="100%" stop-color="#e879f9"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M28 14 C38 14 42 20 42 30 C42 40 38 46 28 46" fill="url(#g24-1)" opacity="0.85"/>
+                        <path d="M28 18 C36 18 39 23 39 30 C39 37 36 42 28 42" fill="#0f172a"/>
+                        <path d="M18 20 C12 20 10 24 10 30 C10 36 12 40 18 40" fill="url(#g24-2)" opacity="0.7"/>
+                        <path d="M18 24 C14 24 13 27 13 30 C13 33 14 36 18 36" fill="#0f172a"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">크레센트 페어</div>
+            </div>
+
+            <!-- 25. 헥스 모자이크 -->
+            <div class="logo-card" onclick="selectLogo(25)">
+                <div class="logo-number">Design #25</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <path d="M30 18 L36 21 L36 27 L30 30 L24 27 L24 21 Z" fill="#60a5fa" opacity="0.9"/>
+                        <path d="M38 21 L44 24 L44 30 L38 33 L32 30 L32 24 Z" fill="#60a5fa" opacity="0.75"/>
+                        <path d="M22 21 L28 24 L28 30 L22 33 L16 30 L16 24 Z" fill="#a78bfa" opacity="0.7"/>
+                        <path d="M30 30 L36 33 L36 39 L30 42 L24 39 L24 33 Z" fill="#c084fc" opacity="0.65"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">헥스 모자이크</div>
+            </div>
+
+            <!-- 26. 레이어드 웨이브 -->
+            <div class="logo-card" onclick="selectLogo(26)">
+                <div class="logo-number">Design #26</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <path d="M12 32 Q22 24 30 32 T48 32 L48 48 L12 48 Z" fill="#60a5fa" opacity="0.85"/>
+                        <path d="M12 36 Q22 28 30 36 T48 36 L48 48 L12 48 Z" fill="#a78bfa" opacity="0.7"/>
+                        <path d="M12 40 Q22 32 30 40 T48 40 L48 48 L12 48 Z" fill="#c084fc" opacity="0.55"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">레이어드 웨이브</div>
+            </div>
+
+            <!-- 27. 트리플 아치 -->
+            <div class="logo-card" onclick="selectLogo(27)">
+                <div class="logo-number">Design #27</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <path d="M12 42 Q24 16 36 42" stroke="#60a5fa" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.9"/>
+                        <path d="M18 42 Q30 22 42 42" stroke="#a78bfa" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.7"/>
+                        <path d="M24 42 Q36 28 48 42" stroke="#c084fc" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.55"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">트리플 아치</div>
+            </div>
+
+            <!-- 28. 옵틱 서클 -->
+            <div class="logo-card" onclick="selectLogo(28)">
+                <div class="logo-number">Design #28</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <circle cx="24" cy="26" r="9" fill="#60a5fa" opacity="0.85"/>
+                        <circle cx="36" cy="26" r="9" fill="#60a5fa" opacity="0.8"/>
+                        <circle cx="24" cy="34" r="9" fill="#a78bfa" opacity="0.75"/>
+                        <circle cx="36" cy="34" r="9" fill="#a78bfa" opacity="0.7"/>
+                        <circle cx="30" cy="30" r="8" fill="#c084fc" opacity="0.95"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">옵틱 서클</div>
+            </div>
+
+            <!-- 29. 스태거드 스타 -->
+            <div class="logo-card" onclick="selectLogo(29)">
+                <div class="logo-number">Design #29</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <path d="M22 16 L24 23 L31 24 L26 28 L28 35 L22 31 L16 35 L18 28 L13 24 L20 23 Z" fill="#93c5fd" opacity="0.6"/>
+                        <path d="M30 21 L32 28 L39 29 L34 33 L36 40 L30 36 L24 40 L26 33 L21 29 L28 28 Z" fill="#60a5fa" opacity="0.8"/>
+                        <path d="M38 16 L40 23 L47 24 L42 28 L44 35 L38 31 L32 35 L34 28 L29 24 L36 23 Z" fill="#3b82f6" opacity="0.95"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">스태거드 스타</div>
+            </div>
+
+            <!-- 30. 퀀텀 링 -->
+            <div class="logo-card" onclick="selectLogo(30)">
+                <div class="logo-number">Design #30</div>
+                <div class="logo-display">
+                    <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                        <defs>
+                            <filter id="quantum30">
+                                <feGaussianBlur stdDeviation="2"/>
+                            </filter>
+                        </defs>
+                        <circle cx="22" cy="30" r="12" stroke="#60a5fa" stroke-width="3" fill="none" filter="url(#quantum30)" opacity="0.9"/>
+                        <circle cx="32" cy="30" r="12" stroke="#a78bfa" stroke-width="3" fill="none" filter="url(#quantum30)" opacity="0.75"/>
+                        <circle cx="42" cy="30" r="12" stroke="#f0abfc" stroke-width="3" fill="none" filter="url(#quantum30)" opacity="0.6"/>
+                        <circle cx="32" cy="30" r="4" fill="#e0e7ff"/>
+                        <text x="70" y="38" font-size="26" font-weight="800" fill="#e2e8f0">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">퀀텀 링</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="selected-info" id="selectedInfo">
+        Selected: <span id="selectedNumber"></span>
+    </div>
+
+    <script>
+        let selectedLogo = null;
+        
+        function selectLogo(num) {
+            document.querySelectorAll('.logo-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            event.currentTarget.classList.add('selected');
+            selectedLogo = num;
+            
+            document.getElementById('selectedNumber').textContent = 'Design #' + num;
+            document.getElementById('selectedInfo').classList.add('show');
+            
+            console.log('Selected Premium Logo:', num);
+        }
+    </script>
+</body>
+</html>
+

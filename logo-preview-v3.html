@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNOVAHA 로고 30가지 (v3) - 트윈 스타 스타일</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            background: linear-gradient(135deg, #fafafa 0%, #f0f4f8 100%);
+            padding: 40px 20px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        h1 { 
+            text-align: center; 
+            margin-bottom: 10px; 
+            font-size: 48px;
+            background: linear-gradient(135deg, #3182f6 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 40px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 20px; 
+        }
+        .logo-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .logo-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(49,130,246,0.15);
+            border-color: rgba(49,130,246,0.2);
+        }
+        .logo-card.selected {
+            border: 3px solid #3182f6;
+            background: linear-gradient(135deg, rgba(49,130,246,0.08) 0%, rgba(168,85,247,0.08) 100%);
+            transform: translateY(-6px) scale(1.02);
+        }
+        .logo-number {
+            font-size: 14px;
+            color: #9ca3af;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .logo-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+            margin-bottom: 20px;
+            background: radial-gradient(circle, rgba(49,130,246,0.03) 0%, rgba(168,85,247,0.02) 100%);
+            border-radius: 12px;
+        }
+        .logo-name {
+            font-size: 15px;
+            color: #374151;
+            text-align: center;
+            font-weight: 600;
+        }
+        .selected-info {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #3182f6 0%, #a855f7 100%);
+            color: white;
+            padding: 20px 32px;
+            border-radius: 16px;
+            box-shadow: 0 12px 32px rgba(49,130,246,0.4);
+            display: none;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .selected-info.show { 
+            display: block; 
+            animation: slideIn 0.3s ease;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SNOVAHA 로고 30가지 (v3)</h1>
+        <p class="subtitle">트윈 스타 스타일 | 겹치는 도형 + 반투명 효과 ⭐️✨</p>
+        
+        <div class="grid">
+            <!-- 1. 트윈 스타 클래식 -->
+            <div class="logo-card" onclick="selectLogo(1)">
+                <div class="logo-number">#1</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <path d="M20 12 L22 20 L30 21 L24 26 L26 34 L20 29 L14 34 L16 26 L10 21 L18 20 Z" fill="#3182f6"/>
+                        <path d="M28 16 L30 24 L38 25 L32 30 L34 38 L28 33 L22 38 L24 30 L18 25 L26 24 Z" fill="#60a5fa" opacity="0.75"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">트윈 스타 클래식</div>
+            </div>
+
+            <!-- 2. 트리플 스타 -->
+            <div class="logo-card" onclick="selectLogo(2)">
+                <div class="logo-number">#2</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <path d="M18 15 L20 22 L27 23 L22 27 L24 34 L18 30 L12 34 L14 27 L9 23 L16 22 Z" fill="#3182f6"/>
+                        <path d="M25 18 L27 25 L34 26 L29 30 L31 37 L25 33 L19 37 L21 30 L16 26 L23 25 Z" fill="#60a5fa" opacity="0.7"/>
+                        <path d="M32 15 L34 22 L41 23 L36 27 L38 34 L32 30 L26 34 L28 27 L23 23 L30 22 Z" fill="#93c5fd" opacity="0.5"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">트리플 스타</div>
+            </div>
+
+            <!-- 3. 트윈 서클 -->
+            <div class="logo-card" onclick="selectLogo(3)">
+                <div class="logo-number">#3</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <circle cx="20" cy="25" r="12" fill="#3182f6"/>
+                        <circle cx="30" cy="25" r="12" fill="#60a5fa" opacity="0.7"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">트윈 서클</div>
+            </div>
+
+            <!-- 4. 트리플 서클 -->
+            <div class="logo-card" onclick="selectLogo(4)">
+                <div class="logo-number">#4</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <circle cx="18" cy="25" r="10" fill="#3182f6"/>
+                        <circle cx="28" cy="25" r="10" fill="#60a5fa" opacity="0.75"/>
+                        <circle cx="38" cy="25" r="10" fill="#93c5fd" opacity="0.5"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">트리플 서클</div>
+            </div>
+
+            <!-- 5. 트윈 헥사곤 -->
+            <div class="logo-card" onclick="selectLogo(5)">
+                <div class="logo-number">#5</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <path d="M20 12 L28 16 L28 28 L20 32 L12 28 L12 16 Z" fill="#3182f6"/>
+                        <path d="M28 16 L36 20 L36 32 L28 36 L20 32 L20 20 Z" fill="#60a5fa" opacity="0.7"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">트윈 헥사곤</div>
+            </div>
+
+            <!-- 6. 트윈 다이아몬드 -->
+            <div class="logo-card" onclick="selectLogo(6)">
+                <div class="logo-number">#6</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <path d="M20 10 L32 25 L20 40 L8 25 Z" fill="#3182f6"/>
+                        <path d="M28 14 L40 25 L28 36 L16 25 Z" fill="#60a5fa" opacity="0.7"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">트윈 다이아몬드</div>
+            </div>
+
+            <!-- 7. 트윈 스퀘어 -->
+            <div class="logo-card" onclick="selectLogo(7)">
+                <div class="logo-number">#7</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <rect x="10" y="15" width="20" height="20" rx="3" fill="#3182f6"/>
+                        <rect x="20" y="15" width="20" height="20" rx="3" fill="#60a5fa" opacity="0.7"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">트윈 스퀘어</div>
+            </div>
+
+            <!-- 8. 트윈 트라이앵글 -->
+            <div class="logo-card" onclick="selectLogo(8)">
+                <div class="logo-number">#8</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <path d="M20 10 L32 35 L8 35 Z" fill="#3182f6"/>
+                        <path d="M28 15 L40 40 L16 40 Z" fill="#60a5fa" opacity="0.7"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">트윈 트라이앵글</div>
+            </div>
+
+            <!-- 9. 트윈 크레센트 -->
+            <div class="logo-card" onclick="selectLogo(9)">
+                <div class="logo-number">#9</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <circle cx="22" cy="25" r="12" fill="#3182f6"/>
+                        <circle cx="28" cy="25" r="12" fill="white"/>
+                        <circle cx="32" cy="25" r="12" fill="#60a5fa" opacity="0.7"/>
+                        <circle cx="38" cy="25" r="12" fill="white"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">트윈 크레센트</div>
+            </div>
+
+            <!-- 10. 버블 오버랩 -->
+            <div class="logo-card" onclick="selectLogo(10)">
+                <div class="logo-number">#10</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <circle cx="18" cy="22" r="8" fill="#3182f6"/>
+                        <circle cx="28" cy="28" r="10" fill="#60a5fa" opacity="0.75"/>
+                        <circle cx="22" cy="32" r="6" fill="#93c5fd" opacity="0.6"/>
+                        <circle cx="32" cy="20" r="7" fill="#bfdbfe" opacity="0.5"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">버블 오버랩</div>
+            </div>
+
+            <!-- 11. 듀얼 링 -->
+            <div class="logo-card" onclick="selectLogo(11)">
+                <div class="logo-number">#11</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <circle cx="20" cy="25" r="12" stroke="#3182f6" stroke-width="3" fill="none"/>
+                        <circle cx="30" cy="25" r="12" stroke="#60a5fa" stroke-width="3" fill="none" opacity="0.7"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">듀얼 링</div>
+            </div>
+
+            <!-- 12. 쓰리 링 -->
+            <div class="logo-card" onclick="selectLogo(12)">
+                <div class="logo-number">#12</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <circle cx="18" cy="25" r="10" stroke="#3182f6" stroke-width="2.5" fill="none"/>
+                        <circle cx="28" cy="25" r="10" stroke="#60a5fa" stroke-width="2.5" fill="none" opacity="0.75"/>
+                        <circle cx="38" cy="25" r="10" stroke="#93c5fd" stroke-width="2.5" fill="none" opacity="0.5"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">쓰리 링</div>
+            </div>
+
+            <!-- 13. 그라디언트 오버랩 서클 -->
+            <div class="logo-card" onclick="selectLogo(13)">
+                <div class="logo-number">#13</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <defs>
+                            <linearGradient id="g13-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#3182f6"/>
+                                <stop offset="100%" stop-color="#1d4ed8"/>
+                            </linearGradient>
+                            <linearGradient id="g13-2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#60a5fa"/>
+                                <stop offset="100%" stop-color="#3182f6"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="20" cy="25" r="12" fill="url(#g13-1)"/>
+                        <circle cx="30" cy="25" r="12" fill="url(#g13-2)" opacity="0.7"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">그라디언트 오버랩</div>
+            </div>
+
+            <!-- 14. 펜타곤 듀얼 -->
+            <div class="logo-card" onclick="selectLogo(14)">
+                <div class="logo-number">#14</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <path d="M20 12 L28 15 L26 25 L16 28 L12 18 Z" fill="#3182f6"/>
+                        <path d="M28 18 L36 21 L34 31 L24 34 L20 24 Z" fill="#60a5fa" opacity="0.75"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">펜타곤 듀얼</div>
+            </div>
+
+            <!-- 15. 옥타곤 트윈 -->
+            <div class="logo-card" onclick="selectLogo(15)">
+                <div class="logo-number">#15</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <path d="M20 14 L26 12 L30 16 L30 24 L26 28 L18 28 L14 24 L14 16 Z" fill="#3182f6"/>
+                        <path d="M28 18 L34 16 L38 20 L38 28 L34 32 L26 32 L22 28 L22 20 Z" fill="#60a5fa" opacity="0.7"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">옥타곤 트윈</div>
+            </div>
+
+            <!-- 16. 플라워 페탈 -->
+            <div class="logo-card" onclick="selectLogo(16)">
+                <div class="logo-number">#16</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <circle cx="25" cy="18" r="6" fill="#3182f6" opacity="0.8"/>
+                        <circle cx="32" cy="25" r="6" fill="#3182f6" opacity="0.7"/>
+                        <circle cx="25" cy="32" r="6" fill="#3182f6" opacity="0.6"/>
+                        <circle cx="18" cy="25" r="6" fill="#3182f6" opacity="0.5"/>
+                        <circle cx="25" cy="25" r="5" fill="#60a5fa"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">플라워 페탈</div>
+            </div>
+
+            <!-- 17. 크로스 오버랩 -->
+            <div class="logo-card" onclick="selectLogo(17)">
+                <div class="logo-number">#17</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <rect x="18" y="12" width="8" height="26" rx="2" fill="#3182f6"/>
+                        <rect x="12" y="18" width="26" height="8" rx="2" fill="#60a5fa" opacity="0.75"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">크로스 오버랩</div>
+            </div>
+
+            <!-- 18. 로테이트 스퀘어 -->
+            <div class="logo-card" onclick="selectLogo(18)">
+                <div class="logo-number">#18</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <rect x="15" y="15" width="20" height="20" rx="2" fill="#3182f6"/>
+                        <rect x="15" y="15" width="20" height="20" rx="2" fill="#60a5fa" opacity="0.7" transform="rotate(45 25 25)"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">로테이트 스퀘어</div>
+            </div>
+
+            <!-- 19. 듀얼 크레센트 -->
+            <div class="logo-card" onclick="selectLogo(19)">
+                <div class="logo-number">#19</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <path d="M25 10 C35 10 40 15 40 25 C40 35 35 40 25 40" fill="#3182f6"/>
+                        <path d="M25 13 C34 13 38 17 38 25 C38 33 34 37 25 37" fill="white"/>
+                        <path d="M15 15 C10 15 8 20 8 25 C8 30 10 35 15 35" fill="#60a5fa" opacity="0.7"/>
+                        <path d="M15 18 C11 18 10 22 10 25 C10 28 11 32 15 32" fill="white"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">듀얼 크레센트</div>
+            </div>
+
+            <!-- 20. 벤 다이어그램 -->
+            <div class="logo-card" onclick="selectLogo(20)">
+                <div class="logo-number">#20</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <circle cx="20" cy="25" r="10" fill="#3182f6" opacity="0.5"/>
+                        <circle cx="30" cy="25" r="10" fill="#60a5fa" opacity="0.5"/>
+                        <circle cx="25" cy="25" r="5" fill="#1d4ed8" opacity="0.8"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">벤 다이어그램</div>
+            </div>
+
+            <!-- 21. 스타 트레일 -->
+            <div class="logo-card" onclick="selectLogo(21)">
+                <div class="logo-number">#21</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <path d="M15 20 L17 26 L23 27 L19 31 L20 37 L15 33 L10 37 L11 31 L7 27 L13 26 Z" fill="#93c5fd" opacity="0.4"/>
+                        <path d="M22 17 L24 23 L30 24 L26 28 L27 34 L22 30 L17 34 L18 28 L14 24 L20 23 Z" fill="#60a5fa" opacity="0.6"/>
+                        <path d="M29 14 L31 20 L37 21 L33 25 L34 31 L29 27 L24 31 L25 25 L21 21 L27 20 Z" fill="#3182f6" opacity="0.8"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">스타 트레일</div>
+            </div>
+
+            <!-- 22. 서클 체인 -->
+            <div class="logo-card" onclick="selectLogo(22)">
+                <div class="logo-number">#22</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <circle cx="15" cy="25" r="7" fill="#3182f6" opacity="0.9"/>
+                        <circle cx="25" cy="25" r="7" fill="#60a5fa" opacity="0.75"/>
+                        <circle cx="35" cy="25" r="7" fill="#93c5fd" opacity="0.6"/>
+                        <circle cx="45" cy="25" r="7" fill="#bfdbfe" opacity="0.45"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">서클 체인</div>
+            </div>
+
+            <!-- 23. 하트 듀얼 -->
+            <div class="logo-card" onclick="selectLogo(23)">
+                <div class="logo-number">#23</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <path d="M20 18 C20 14 24 12 26 15 C28 12 32 14 32 18 C32 22 26 28 26 28 C26 28 20 22 20 18 Z" fill="#3182f6"/>
+                        <path d="M24 22 C24 18 28 16 30 19 C32 16 36 18 36 22 C36 26 30 32 30 32 C30 32 24 26 24 22 Z" fill="#60a5fa" opacity="0.7"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">하트 듀얼</div>
+            </div>
+
+            <!-- 24. 다이아 클러스터 -->
+            <div class="logo-card" onclick="selectLogo(24)">
+                <div class="logo-number">#24</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <path d="M18 14 L25 18 L22 26 L14 26 L11 18 Z" fill="#3182f6" opacity="0.8"/>
+                        <path d="M25 18 L32 22 L29 30 L21 30 L18 22 Z" fill="#60a5fa" opacity="0.7"/>
+                        <path d="M32 14 L39 18 L36 26 L28 26 L25 18 Z" fill="#93c5fd" opacity="0.6"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">다이아 클러스터</div>
+            </div>
+
+            <!-- 25. 헥스 그리드 -->
+            <div class="logo-card" onclick="selectLogo(25)">
+                <div class="logo-number">#25</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <path d="M25 15 L30 18 L30 24 L25 27 L20 24 L20 18 Z" fill="#3182f6" opacity="0.9"/>
+                        <path d="M32 18 L37 21 L37 27 L32 30 L27 27 L27 21 Z" fill="#60a5fa" opacity="0.7"/>
+                        <path d="M18 18 L23 21 L23 27 L18 30 L13 27 L13 21 Z" fill="#60a5fa" opacity="0.7"/>
+                        <path d="M25 27 L30 30 L30 36 L25 39 L20 36 L20 30 Z" fill="#93c5fd" opacity="0.5"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">헥스 그리드</div>
+            </div>
+
+            <!-- 26. 웨이브 레이어 -->
+            <div class="logo-card" onclick="selectLogo(26)">
+                <div class="logo-number">#26</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <path d="M10 28 Q18 20 25 28 T40 28 L40 40 L10 40 Z" fill="#3182f6" opacity="0.9"/>
+                        <path d="M10 32 Q18 24 25 32 T40 32 L40 40 L10 40 Z" fill="#60a5fa" opacity="0.7"/>
+                        <path d="M10 36 Q18 28 25 36 T40 36 L40 40 L10 40 Z" fill="#93c5fd" opacity="0.5"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">웨이브 레이어</div>
+            </div>
+
+            <!-- 27. 스타버스트 -->
+            <div class="logo-card" onclick="selectLogo(27)">
+                <div class="logo-number">#27</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <path d="M25 25 L27 15 L29 25 Z" fill="#3182f6" opacity="0.9"/>
+                        <path d="M25 25 L35 19 L29 27 Z" fill="#60a5fa" opacity="0.75"/>
+                        <path d="M25 25 L37 30 L27 31 Z" fill="#93c5fd" opacity="0.6"/>
+                        <path d="M25 25 L29 38 L23 30 Z" fill="#bfdbfe" opacity="0.5"/>
+                        <path d="M25 25 L13 35 L19 27 Z" fill="#dbeafe" opacity="0.4"/>
+                        <path d="M25 25 L10 22 L20 23 Z" fill="#eff6ff" opacity="0.3"/>
+                        <circle cx="25" cy="25" r="4" fill="#1d4ed8"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">스타버스트</div>
+            </div>
+
+            <!-- 28. 드롭 캐스케이드 -->
+            <div class="logo-card" onclick="selectLogo(28)">
+                <div class="logo-number">#28</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <path d="M20 15 C20 15 15 15 15 22 C15 29 20 32 20 32 C20 32 25 29 25 22 C25 15 20 15 20 15 Z" fill="#3182f6" opacity="0.9"/>
+                        <path d="M28 19 C28 19 23 19 23 26 C23 33 28 36 28 36 C28 36 33 33 33 26 C33 19 28 19 28 19 Z" fill="#60a5fa" opacity="0.7"/>
+                        <path d="M36 23 C36 23 31 23 31 30 C31 37 36 40 36 40 C36 40 41 37 41 30 C41 23 36 23 36 23 Z" fill="#93c5fd" opacity="0.5"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">드롭 캐스케이드</div>
+            </div>
+
+            <!-- 29. 트라이앵글 스택 -->
+            <div class="logo-card" onclick="selectLogo(29)">
+                <div class="logo-number">#29</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <path d="M25 12 L35 32 L15 32 Z" fill="#3182f6" opacity="0.9"/>
+                        <path d="M25 18 L33 35 L17 35 Z" fill="#60a5fa" opacity="0.7"/>
+                        <path d="M25 24 L31 38 L19 38 Z" fill="#93c5fd" opacity="0.5"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">트라이앵글 스택</div>
+            </div>
+
+            <!-- 30. 모자이크 서클 -->
+            <div class="logo-card" onclick="selectLogo(30)">
+                <div class="logo-number">#30</div>
+                <div class="logo-display">
+                    <svg width="180" height="50" viewBox="0 0 180 50" fill="none">
+                        <circle cx="20" cy="20" r="6" fill="#3182f6" opacity="0.9"/>
+                        <circle cx="30" cy="20" r="6" fill="#60a5fa" opacity="0.8"/>
+                        <circle cx="20" cy="30" r="6" fill="#60a5fa" opacity="0.7"/>
+                        <circle cx="30" cy="30" r="6" fill="#93c5fd" opacity="0.6"/>
+                        <circle cx="25" cy="25" r="5" fill="#1d4ed8" opacity="0.95"/>
+                        <text x="58" y="32" font-size="24" font-weight="800" fill="#191f28">SNOVAHA</text>
+                    </svg>
+                </div>
+                <div class="logo-name">모자이크 서클</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="selected-info" id="selectedInfo">
+        선택: <span id="selectedNumber"></span>
+    </div>
+
+    <script>
+        let selectedLogo = null;
+        
+        function selectLogo(num) {
+            // 이전 선택 제거
+            document.querySelectorAll('.logo-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            // 새로운 선택
+            event.currentTarget.classList.add('selected');
+            selectedLogo = num;
+            
+            // 선택 정보 표시
+            document.getElementById('selectedNumber').textContent = '#' + num;
+            document.getElementById('selectedInfo').classList.add('show');
+            
+            console.log('Selected logo (v3 - Twin Style):', num);
+        }
+    </script>
+</body>
+</html>
+
