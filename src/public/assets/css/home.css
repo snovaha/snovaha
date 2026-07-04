@@ -1,1019 +1,330 @@
-/* SNOVAHA Home - 2025 Toss-inspired Design */
+/* SNOVAHA 메인 홈 — 감성 리뉴얼 (각도법 디자인 언어 통일) */
 :root {
-  --bg: #fafafa;
+  --bg: #fdfcff;
   --surface: #ffffff;
   --text-primary: #191f28;
   --text-secondary: #4e5968;
   --text-tertiary: #8b95a1;
   --primary: #3182f6;
   --primary-hover: #1b64da;
-  --accent: #4d7cfe;
-  --border: #e5e8eb;
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --pink: #f26d9c;
+  --pink-soft: #ffe4ee;
+  --blue: #4d8df6;
+  --blue-soft: #e3eeff;
+  --gold: #f5b942;
+  --gold-soft: #fff3d6;
+  --mint-soft: #e2f6ec;
+  --purple-soft: #efe9ff;
+  --border: #ecebf3;
+  --shadow-sm: 0 2px 4px rgba(25, 31, 40, 0.04);
+  --shadow-md: 0 6px 16px rgba(25, 31, 40, 0.08);
+  --shadow-lg: 0 12px 32px rgba(25, 31, 40, 0.12);
   --radius: 16px;
+  --radius-lg: 24px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* { 
-  box-sizing: border-box; 
-  margin: 0; 
-  padding: 0; 
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-html, body { 
-  background: var(--bg); 
-  color: var(--text-primary); 
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+html, body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, 'Apple SD Gothic Neo', sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
+button { font-family: inherit; }
 
-/* Navigation */
+/* ───────── Nav ───────── */
 .global-nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  z-index: 1000;
-  transition: var(--transition);
+  top: 0; left: 0; right: 0;
+  background: rgba(253, 252, 255, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(236, 235, 243, 0.7);
+  z-index: 100;
 }
-
 .nav-container {
-  max-width: 1200px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: var(--text-primary);
-  transition: var(--transition);
-}
-
-.logo:hover {
-  opacity: 0.7;
-}
-
-.nav-links {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
+.logo { display: flex; align-items: center; text-decoration: none; color: var(--text-primary); }
+.logo:hover { opacity: 0.75; }
+.nav-links { display: flex; gap: 24px; }
 .nav-link {
   color: var(--text-secondary);
   text-decoration: none;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 14.5px;
   transition: var(--transition);
-  position: relative;
-  white-space: nowrap;
 }
+.nav-link:hover { color: var(--primary); }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--primary);
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover {
-  color: var(--primary);
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
-/* 모바일 네비게이션 */
-@media (max-width: 768px) {
-  .nav-container {
-    padding: 0 16px;
-    height: 56px;
-  }
-  
-  .logo svg {
-    width: 120px;
-    height: 32px;
-  }
-  
-  .nav-links {
-    gap: 12px;
-  }
-  
-  .nav-link {
-    font-size: 13px;
-  }
-}
-
-/* Hero Section */
+/* ───────── Hero ───────── */
 .home-hero {
   position: relative;
-  padding: 160px 24px 120px;
-  text-align: center;
-  background: linear-gradient(135deg, #f8fafe 0%, #f0f4ff 50%, #e8f1ff 100%);
-  overflow: hidden;
-  min-height: 80vh;
+  min-height: 78vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  padding: 140px 24px 100px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 18% 20%, rgba(242, 109, 156, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 82% 18%, rgba(77, 141, 246, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 100%, rgba(245, 185, 66, 0.09) 0%, transparent 60%),
+    linear-gradient(180deg, #fbf8ff 0%, #fdfcff 100%);
 }
-
-.home-hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    /* 부드러운 글로우 효과 */
-    radial-gradient(circle at 20% 30%, rgba(96, 165, 250, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 182, 193, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(96, 165, 250, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 70% 70%, rgba(255, 218, 185, 0.06) 0%, transparent 40%),
-    /* 귀여운 패턴 (별, 하트, 동그라미) */
-    radial-gradient(circle at 15% 25%, rgba(96, 165, 250, 0.15) 0%, transparent 4px),
-    radial-gradient(circle at 85% 15%, rgba(255, 182, 193, 0.12) 0%, transparent 3px),
-    radial-gradient(circle at 25% 75%, rgba(96, 165, 250, 0.1) 0%, transparent 4px),
-    radial-gradient(circle at 75% 85%, rgba(255, 218, 185, 0.1) 0%, transparent 3px),
-    radial-gradient(circle at 45% 35%, rgba(96, 165, 250, 0.12) 0%, transparent 3px),
-    radial-gradient(circle at 65% 55%, rgba(255, 182, 193, 0.08) 0%, transparent 2px),
-    radial-gradient(circle at 20% 50%, rgba(96, 165, 250, 0.1) 0%, transparent 4px),
-    radial-gradient(circle at 80% 40%, rgba(255, 218, 185, 0.1) 0%, transparent 3px),
-    radial-gradient(circle at 40% 65%, rgba(96, 165, 250, 0.08) 0%, transparent 2px),
-    radial-gradient(circle at 60% 25%, rgba(255, 182, 193, 0.12) 0%, transparent 4px),
-    radial-gradient(circle at 90% 60%, rgba(96, 165, 250, 0.08) 0%, transparent 2px),
-    radial-gradient(circle at 10% 80%, rgba(255, 182, 193, 0.1) 0%, transparent 3px),
-    radial-gradient(circle at 50% 10%, rgba(96, 165, 250, 0.12) 0%, transparent 4px),
-    radial-gradient(circle at 30% 45%, rgba(255, 218, 185, 0.08) 0%, transparent 2px);
-  animation: float 20s ease-in-out infinite;
-}
-
-/* 오버레이 패턴 (육아 아이콘 실루엣) */
-.home-hero::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 15 L32 23 L40 24 L34 29 L36 37 L30 32 L24 37 L26 29 L20 24 L28 23 Z' fill='%2360a5fa' fill-opacity='0.05'/%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='8' fill='none' stroke='%23ffb6c1' stroke-width='1' opacity='0.06'/%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='2' fill='%23ffdab9' opacity='0.08'/%3E%3C/svg%3E");
-  background-size: 120px 120px, 80px 80px, 40px 40px;
-  background-position: 0 0, 40px 40px, 20px 20px;
-  opacity: 0.6;
-  animation: patternSlide 30s linear infinite;
-}
-
-@keyframes float {
-  0%, 100% { 
-    transform: translate(0, 0) scale(1);
-    opacity: 1;
-  }
-  50% { 
-    transform: translate(20px, -20px) scale(1.05);
-    opacity: 0.9;
-  }
-}
-
-@keyframes patternSlide {
-  0% { background-position: 0 0, 40px 40px; }
-  100% { background-position: 120px 120px, 160px 160px; }
-}
-
-.home-hero-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 720px;
-  margin: 0 auto;
-}
-
+.home-hero-inner { position: relative; z-index: 2; max-width: 680px; }
 .brand {
   font-size: 64px;
   font-weight: 800;
   letter-spacing: -0.03em;
-  margin-bottom: 20px;
-  background: linear-gradient(135deg, #1e293b 0%, #3182f6 50%, #7c3aed 100%);
+  margin-bottom: 18px;
+  background: linear-gradient(120deg, #191f28 10%, var(--blue) 55%, var(--pink) 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: fadeInUp 0.8s ease, textGlow 3s ease-in-out infinite;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 0.8s ease both;
 }
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes textGlow {
-  0%, 100% {
-    filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.2));
-  }
-  50% {
-    filter: drop-shadow(0 0 30px rgba(124, 58, 237, 0.3));
-  }
-}
-
 .tagline {
   font-size: 22px;
-  color: var(--text-primary);
-  margin-bottom: 16px;
   font-weight: 600;
-  animation: fadeInUp 0.8s ease 0.2s both;
-  letter-spacing: -0.01em;
-}
-
-.tagline-sub {
-  font-size: 16px;
   color: var(--text-secondary);
-  font-weight: 400;
-  animation: fadeInUp 0.8s ease 0.3s both;
+  margin-bottom: 10px;
+  animation: fadeInUp 0.8s ease 0.15s both;
+}
+.tagline-sub {
+  font-size: 15.5px;
+  color: var(--text-tertiary);
+  margin-bottom: 40px;
+  animation: fadeInUp 0.8s ease 0.25s both;
+}
+.hero-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; animation: fadeInUp 0.8s ease 0.35s both; }
+
+.star {
+  position: absolute;
+  color: var(--gold);
+  opacity: 0;
+  animation: twinkle 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.6); }
+  50% { opacity: 0.85; transform: scale(1.1); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.cta-group {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-  animation: fadeInUp 0.8s ease 0.4s both;
-}
-
+/* ───────── Buttons ───────── */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 28px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-  transition: var(--transition);
+  gap: 8px;
+  padding: 15px 30px;
+  border-radius: 14px;
   border: none;
   cursor: pointer;
-  min-width: 130px;
-  white-space: nowrap;
-}
-
-.btn.primary {
-  background: linear-gradient(135deg, #3182f6 0%, #4d7cfe 100%);
-  color: white;
-  box-shadow: 0 4px 16px rgba(49, 130, 246, 0.4);
-}
-
-.btn.primary:hover {
-  background: linear-gradient(135deg, #1b64da 0%, #3182f6 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(49, 130, 246, 0.5);
-}
-
-.btn.secondary, .btn.outline {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.btn.secondary:hover, .btn.outline:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-2px);
-}
-
-/* 모바일 히어로 반응형 */
-@media (max-width: 768px) {
-  .home-hero {
-    padding: 120px 20px 80px;
-    min-height: 70vh;
-  }
-  
-  .brand {
-    font-size: 48px;
-  }
-  
-  .tagline {
-    font-size: 18px;
-    margin-bottom: 32px;
-  }
-  
-  .cta-group {
-    flex-direction: column;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-  
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
-}
-  border-color: var(--primary);
-  color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-/* Services Section */
-.services {
-  padding: 100px 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-title {
-  font-size: 36px;
+  text-decoration: none;
   font-weight: 700;
-  text-align: center;
-  margin-bottom: 60px;
+  font-size: 15.5px;
+  transition: var(--transition);
+}
+.btn.primary {
+  background: linear-gradient(120deg, var(--pink) 0%, var(--blue) 120%);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(242, 109, 156, 0.35);
+}
+.btn.primary:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(242, 109, 156, 0.45); }
+.btn.outline {
+  background: var(--surface);
   color: var(--text-primary);
+  border: 1.5px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+.btn.outline:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+
+/* ───────── Sections ───────── */
+.section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 72px 20px;
+}
+.section-title {
+  font-size: 30px;
+  font-weight: 800;
   letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.section-sub {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 15px;
+  margin-bottom: 44px;
 }
 
+/* 스크롤 리빌 */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ───────── Services ───────── */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-bottom: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
-
 .service-card {
-  background: var(--surface);
-  border: 1.5px solid var(--border);
-  border-radius: 24px;
-  padding: 48px 32px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 30px 26px;
+  text-decoration: none;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
   overflow: hidden;
 }
-
 .service-card::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(49, 130, 246, 0.05), transparent);
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--card-accent, var(--primary));
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: var(--transition);
 }
-
-.service-card:hover::before {
-  opacity: 1;
-}
-
 .service-card:hover {
-  transform: translateY(-16px);
-  box-shadow: 0 24px 48px rgba(49, 130, 246, 0.2);
-  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
 }
-
-.service-card-highlight {
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-  border-color: #fbbf24;
-}
-
-.service-card-highlight:hover {
-  box-shadow: 0 24px 48px rgba(251, 191, 36, 0.25);
-}
-
+.service-card:hover::before { opacity: 1; }
 .service-icon {
-  font-size: 64px;
-  margin-bottom: 20px;
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 18px;
+  background: var(--card-soft, var(--blue-soft));
+}
+.service-card h3 { font-size: 19px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.01em; }
+.service-card p { font-size: 14px; color: var(--text-secondary); }
+.service-card .card-link {
   display: inline-block;
-  animation: bounce 3s ease-in-out infinite;
-}
-
-.service-card h3 {
-  font-size: 20px;
+  margin-top: 14px;
+  font-size: 13.5px;
   font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 12px;
+  color: var(--card-accent, var(--primary));
 }
-
-.service-card p {
-  font-size: 15px;
-  color: var(--text-secondary);
-  margin: 0;
-  line-height: 1.6;
-}
-
+.service-card.c-pink { --card-accent: var(--pink); --card-soft: var(--pink-soft); }
+.service-card.c-blue { --card-accent: var(--blue); --card-soft: var(--blue-soft); }
+.service-card.c-gold { --card-accent: #d99a17; --card-soft: var(--gold-soft); }
+.service-card.c-purple { --card-accent: #8b6ff2; --card-soft: var(--purple-soft); }
 .badge {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  background: linear-gradient(135deg, #ff6b6b, #ff8787);
-  color: white;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 6px 14px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+  top: 18px; right: 18px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #d99a17;
+  background: var(--gold-soft);
+  padding: 4px 10px;
+  border-radius: 999px;
 }
 
-/* Latest Benefits Section */
-.latest-section {
-  padding: 100px 24px;
-  max-width: 1200px;
-  margin: 60px auto 0;
-  background: linear-gradient(135deg, #f0f4ff 0%, #e0eaff 100%);
-  border-radius: 32px;
-}
-
-.latest-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 56px;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.latest-header h2 {
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0;
-}
-
-.link-more {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 16px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: var(--transition);
-}
-
-.link-more:hover {
-  gap: 12px;
-}
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.benefit-card {
-  background: white;
-  border-radius: 24px;
-  padding: 36px 28px;
-  text-decoration: none;
+/* ───────── 각도법 하이라이트 배너 ───────── */
+.feature-banner {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: radial-gradient(ellipse at 75% 20%, #2a3560 0%, #141a38 65%);
+  color: #fff;
+  padding: 52px 36px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  border: 1px solid transparent;
-  position: relative;
-}
-
-.benefit-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  border-radius: 24px 24px 0 0;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-
-.benefit-card:hover::before {
-  transform: scaleX(1);
-}
-
-.benefit-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 40px rgba(49, 130, 246, 0.2);
-  border-color: var(--primary);
-}
-
-.benefit-icon {
-  font-size: 48px;
-  margin-bottom: 16px;
-}
-
-.benefit-card h4 {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 10px;
-}
-
-.benefit-card p {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 10px;
-}
-
-.benefit-note {
-  font-size: 13px;
-  color: var(--text-secondary);
-  display: block;
-}
-
-/* 모바일 반응형 (유지) */
-@media (max-width: 768px) {
-  .services {
-    padding: 60px 20px;
-  }
-  
-  .section-title {
-    font-size: 24px;
-    margin-bottom: 40px;
-  }
-  
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-  
-  .service-card {
-    padding: 28px 20px;
-  }
-  
-  .service-icon {
-    font-size: 44px;
-    margin-bottom: 12px;
-  }
-  
-  .service-card h3 {
-    font-size: 16px;
-  }
-  
-  .service-card p {
-    font-size: 13px;
-  }
-  
-  .latest-section {
-    padding: 60px 20px;
-    margin: 40px 20px 0;
-    border-radius: 24px;
-  }
-  
-  .latest-header h2 {
-    font-size: 22px;
-  }
-  
-  .benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-  
-  .benefit-card {
-    padding: 20px 16px;
-  }
-  
-  .benefit-icon {
-    font-size: 32px;
-    margin-bottom: 8px;
-  }
-  
-  .benefit-card h4 {
-    font-size: 13px;
-  }
-  
-  .benefit-card p {
-    font-size: 16px;
-  }
-}
-
-/* Features Section (제거 예정) */
-.features {
-  padding: 80px 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.feature {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  margin-bottom: 100px;
-  align-items: center;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-.feature:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.feature:nth-child(2) {
-  animation-delay: 0.2s;
-  grid-template-columns: 1fr 1fr;
-}
-
-.feature:nth-child(even) {
-  direction: rtl;
-}
-
-.feature:nth-child(even) > * {
-  direction: ltr;
-}
-
-.feature-text h2 {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  color: var(--text-primary);
-  letter-spacing: -0.02em;
-}
-
-.feature-text p {
-  font-size: 17px;
-  color: var(--text-secondary);
-  margin-bottom: 24px;
-  line-height: 1.7;
-}
-
-.feature .link {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 16px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: var(--transition);
-}
-
-.feature .link::after {
-  content: '→';
-  transition: var(--transition);
-}
-
-.feature .link:hover {
-  gap: 12px;
-}
-
-.feature .link:hover::after {
-  transform: translateX(4px);
-}
-
-.feature-visual {
-  height: 360px;
-  border-radius: 20px;
-  background-size: cover;
-  background-position: center;
+  gap: 20px;
+  align-items: flex-start;
   box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border);
-  transition: var(--transition);
-  overflow: hidden;
-  position: relative;
 }
-
-.feature-visual::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(49, 130, 246, 0.05), transparent);
-  opacity: 0;
-  transition: var(--transition);
-}
-
-.feature-visual:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-}
-
-/* 모바일 Features */
-@media (max-width: 768px) {
-  .features {
-    padding: 60px 20px;
-  }
-  
-  .feature {
-    grid-template-columns: 1fr !important;
-    gap: 32px;
-    margin-bottom: 80px;
-    direction: ltr !important;
-  }
-  
-  .feature:nth-child(even) {
-    direction: ltr !important;
-  }
-  
-  .feature-text h2 {
-    font-size: 28px;
-    margin-bottom: 12px;
-  }
-  
-  .feature-text p {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  
-  .feature-visual {
-    height: 280px;
-    order: -1;
-  }
-}
-
-.feature-visual:hover::after {
-  opacity: 1;
-}
-
-.feature-invitation {
-  background-image: url('../images/hero.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-.feature-nub-theory {
-  background-image: url('/nub-theory/assets/images/ultrasound-example.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-.feature-nub-theory::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(49, 130, 246, 0.1), transparent);
-}
-
-.feature-benefits {
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 48px;
-}
-
-.feature-benefits::before {
-  content: '🎁';
-}
-
-.feature-community {
-  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 48px;
-}
-
-.feature-community::before {
-  content: '💬';
-}
-
-/* Stories Section */
-.stories {
-  padding: 120px 24px;
-  background: var(--surface);
-  max-width: 1200px;
-  margin: 0 auto;
-  border-radius: 32px;
-  box-shadow: var(--shadow-sm);
-}
-
-.stories > h2 {
-  font-size: 42px;
+.feature-banner .fb-eyebrow {
+  font-size: 13px;
   font-weight: 700;
-  text-align: center;
-  margin-bottom: 64px;
-  color: var(--text-primary);
-  letter-spacing: -0.02em;
+  color: #ffd166;
+  letter-spacing: 0.04em;
+}
+.feature-banner h3 { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.35; }
+.feature-banner p { font-size: 15px; color: rgba(255, 255, 255, 0.75); }
+.feature-banner .fb-privacy {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.55);
 }
 
-.cards {
+/* ───────── 혜택 티저 ───────── */
+.benefits-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
 }
-
-.card {
-  background: var(--bg);
-  border: 1.5px solid var(--border);
-  border-radius: 20px;
-  padding: 40px;
-  transition: var(--transition);
-  cursor: pointer;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--primary);
-}
-
-.card h3 {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: var(--text-primary);
-}
-
-.card p {
-  color: var(--text-secondary);
-  margin-bottom: 24px;
-  line-height: 1.7;
-  font-size: 15px;
-}
-
-.card .link {
-  color: var(--primary);
+.benefit-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
   text-decoration: none;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 15px;
-  transition: var(--transition);
-}
-
-.card .link::after {
-  content: '→';
-  transition: var(--transition);
-}
-
-.card:hover .link {
-  gap: 12px;
-}
-
-.card:hover .link::after {
-  transform: translateX(4px);
-}
-
-/* CTA Section */
-.cta {
-  padding: 80px 24px;
-  text-align: center;
-  background: linear-gradient(135deg, #f0f4ff 0%, #e0eaff 100%);
-  margin: 60px 24px;
-  border-radius: 24px;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cta h2 {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 16px;
   color: var(--text-primary);
-  letter-spacing: -0.02em;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
 }
+.benefit-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--primary); }
+.benefit-icon { font-size: 26px; margin-bottom: 10px; }
+.benefit-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.benefit-card .amount { font-size: 19px; font-weight: 800; color: var(--primary); margin-bottom: 2px; }
+.benefit-card .benefit-note { font-size: 12px; color: var(--text-tertiary); }
+.section-more { text-align: center; margin-top: 32px; }
 
-.cta p {
-  font-size: 17px !important;
-  color: var(--text-secondary) !important;
-  margin-bottom: 32px !important;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* 모바일 CTA */
-@media (max-width: 768px) {
-  .cta {
-    padding: 60px 20px;
-    margin: 40px 20px;
-    border-radius: 20px;
-  }
-  
-  .cta h2 {
-    font-size: 28px;
-    margin-bottom: 12px;
-  }
-  
-  .cta p {
-    font-size: 16px !important;
-    margin-bottom: 28px !important;
-  }
-  
-  .cta-buttons {
-    flex-direction: column;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-  
-  .cta-buttons .btn {
-    width: 100%;
-  }
-}
-
-/* Footer */
+/* ───────── Footer ───────── */
 .site-footer {
-  padding: 40px 24px;
+  padding: 44px 24px 60px;
   text-align: center;
   color: var(--text-tertiary);
   border-top: 1px solid var(--border);
   background: var(--surface);
-  font-size: 14px;
+  font-size: 13px;
 }
+.footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 14px; flex-wrap: wrap; }
+.footer-links a { color: var(--text-secondary); text-decoration: none; font-weight: 600; font-size: 13.5px; }
+.footer-links a:hover { color: var(--primary); }
 
-/* Responsive Design */
+/* ───────── 반응형 ───────── */
 @media (min-width: 768px) {
-  .brand {
-    font-size: 84px;
-  }
-  
-  .tagline {
-    font-size: 28px;
-  }
-  
-  .feature {
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-  }
-  
-  .feature-visual {
-    height: 480px;
-  }
-  
-  .cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .brand { font-size: 84px; }
+  .tagline { font-size: 26px; }
+  .services-grid { grid-template-columns: repeat(4, 1fr); }
+  .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+  .feature-banner { padding: 64px 56px; }
+  .feature-banner h3 { font-size: 34px; }
 }
-
-@media (min-width: 1024px) {
-  .home-hero {
-    padding: 200px 24px 160px;
-  }
-  
-  .features {
-    padding: 160px 24px;
-  }
-  
-  .stories {
-    padding: 160px 64px;
-  }
-  
-  .cta {
-    padding: 160px 24px;
-  }
+@media (max-width: 480px) {
+  .brand { font-size: 46px; }
+  .tagline { font-size: 18px; }
+  .nav-links { gap: 14px; }
+  .nav-link { font-size: 13px; }
 }
-
-/* Mobile Navigation */
-@media (max-width: 767px) {
-  .nav-links {
-    gap: 20px;
-  }
-  
-  .nav-link {
-    font-size: 14px;
-  }
-  
-  .brand {
-    font-size: 56px;
-  }
-  
-  .tagline {
-    font-size: 18px;
-  }
-  
-  .feature-text h2 {
-    font-size: 32px;
-  }
-  
-  .stories > h2, .cta h2 {
-    font-size: 32px;
-  }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .reveal { opacity: 1; transform: none; }
 }

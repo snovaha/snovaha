@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 보안: 외부 리소스/전송 전면 차단 — 사진은 절대 기기 밖으로 나가지 않습니다 -->
+    <!-- 보안: 허용 목록 외 외부 전송 차단 — 사진 데이터는 절대 기기 밖으로 나가지 않습니다.
+         (Google AdSense 도메인만 광고 목적으로 허용) -->
     <meta http-equiv="Content-Security-Policy"
-          content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+          content="default-src 'none'; script-src 'self' https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://www.googletagservices.com https://adservice.google.com https://ep2.adtrafficquality.google; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self'; connect-src 'self' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://csi.gstatic.com https://ep1.adtrafficquality.google; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com https://ep2.adtrafficquality.google; form-action 'none'; base-uri 'none'">
     <meta name="referrer" content="no-referrer">
     <meta name="description" content="임신 11–13주 초음파 사진의 각도로 아기 성별을 예측해보세요. 사진은 기기 안에서만 처리되어 어디에도 전송되지 않습니다.">
     <title>각도법 — 우리 아기의 첫 번째 힌트 · SNOVAHA</title>
@@ -135,6 +136,11 @@
             </div>
         </section>
 
+        <!-- 광고 (AdSense 설정 시에만 노출) -->
+        <div class="ad-section">
+            <div class="ad-box" id="adMeasure"><span class="ad-label">광고</span></div>
+        </div>
+
         <!-- ───────── 면책 ───────── -->
         <section class="disclaimer">
             <div class="disclaimer-box">
@@ -154,6 +160,7 @@
         <div class="heartbeat-stage" id="heartbeatStage">
             <div class="heart">💓</div>
             <p>아기의 심장 소리에 귀 기울여 보세요<span class="dots"></span></p>
+            <div class="ad-box" id="adHeartbeat"><span class="ad-label">광고</span></div>
         </div>
         <div class="result-stage" id="resultStage">
             <span class="result-emoji" id="resultEmoji"></span>
@@ -171,11 +178,13 @@
                 <button id="backToMeasure" class="btn ghost">다시 측정하기</button>
                 <button id="restartAll" class="btn ghost">처음부터</button>
             </div>
+            <div class="ad-box" id="adResult"><span class="ad-label">광고</span></div>
             <p class="result-disclaimer">의학적 진단이 아닌 참고용 결과예요. 정확한 성별은 의료진의 진단을 받아주세요.<br>사진과 결과는 서버에 저장되지 않아요.</p>
         </div>
     </div>
 
     <script src="assets/js/engine.js"></script>
+    <script src="assets/js/ads.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
 </html>

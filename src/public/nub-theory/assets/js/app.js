@@ -466,7 +466,9 @@
     document.body.style.overflow = 'hidden';
     $('#heartbeatStage').style.display = 'block';
     $('#resultStage').classList.remove('show');
-    revealTimer = setTimeout(showResultStage, 2800);
+    // 광고가 설정되어 있으면 대기 화면에 노출하고 리빌을 조금 늦춤
+    var adShown = window.SnovahaAds && window.SnovahaAds.render('adHeartbeat', 'heartbeat');
+    revealTimer = setTimeout(showResultStage, adShown ? 6500 : 2800);
   });
 
   function showResultStage() {
@@ -504,6 +506,7 @@
     $('#resultStage').classList.add('show');
     requestAnimationFrame(function () { fill.style.width = r.confidence + '%'; });
     burstStars(isGirl && !r.uncertain ? '💗' : (!isGirl && !r.uncertain ? '💙' : '⭐'));
+    if (window.SnovahaAds) window.SnovahaAds.render('adResult', 'result');
   }
 
   function weekLabel(w) {
@@ -680,6 +683,8 @@
   $('#startBtn').addEventListener('click', function () {
     $('#app').scrollIntoView({ behavior: 'smooth' });
   });
+
+  if (window.SnovahaAds) window.SnovahaAds.render('adMeasure', 'measure');
 
   goToStep(1);
 })();

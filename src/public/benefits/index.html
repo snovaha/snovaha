@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="임신·출산·육아 정부 지원금과 혜택 총정리. 첫만남 이용권, 부모급여, 육아휴직 급여까지 한눈에 확인하세요.">
+    <title>육아혜택 — 받을 수 있는 건 다 받자 · SNOVAHA</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="global-nav">
+        <a href="/" class="nav-logo">✦ SNOVAHA</a>
+        <a href="/" class="nav-back">홈으로 →</a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-inner">
+            <span class="hero-eyebrow">🎁 몰라서 못 받으면 아까워요</span>
+            <h1>아기 첫 해에만<br><span class="accent">1,500만원+</span></h1>
+            <p class="sub">첫만남 이용권부터 부모급여, 육아휴직 급여까지.<br>신청만 하면 받을 수 있는 혜택을 한곳에 모았어요.</p>
+            <div class="hero-tip">💡 출생신고할 때 정부24 <b>'행복출산 원스톱 서비스'</b>로 한 번에 신청할 수 있어요</div>
+        </div>
+    </header>
+
+    <main class="content">
+        <!-- 필터 탭 -->
+        <div class="filter-tabs" role="tablist" aria-label="혜택 분류">
+            <button class="tab active" data-filter="all">전체</button>
+            <button class="tab" data-filter="pregnancy">임신·출산</button>
+            <button class="tab" data-filter="baby">0~1세</button>
+            <button class="tab" data-filter="child">보육·아동</button>
+            <button class="tab" data-filter="extra">다자녀·생활</button>
+        </div>
+
+        <div class="benefit-list" id="benefitList">
+            <!-- 임신·출산 -->
+            <a href="https://www.bokjiro.go.kr/" target="_blank" rel="noopener" class="b-card" data-cat="pregnancy">
+                <div class="b-icon">💳</div>
+                <div class="b-body">
+                    <span class="b-cat cat-pink">임신·출산</span>
+                    <h3>임신·출산 진료비 지원 (국민행복카드)</h3>
+                    <p>임신 확인 후 신청하는 진료비 바우처. 산부인과 진료·약제비에 사용해요.</p>
+                </div>
+                <div class="b-amount">100만원<small>다태아는 태아당 100만원</small></div>
+            </a>
+            <a href="https://www.bokjiro.go.kr/" target="_blank" rel="noopener" class="b-card" data-cat="pregnancy">
+                <div class="b-icon">🎫</div>
+                <div class="b-body">
+                    <span class="b-cat cat-pink">임신·출산</span>
+                    <h3>첫만남 이용권</h3>
+                    <p>출생아 1명당 지급되는 바우처. 출생신고 후 60일 내 사용 시작을 추천해요.</p>
+                </div>
+                <div class="b-amount">200만원<small>둘째부터 300만원</small></div>
+            </a>
+            <a href="https://www.seoul.go.kr/" target="_blank" rel="noopener" class="b-card" data-cat="pregnancy">
+                <div class="b-icon">🤱</div>
+                <div class="b-body">
+                    <span class="b-cat cat-pink">임신·출산</span>
+                    <h3>산후조리경비 지원 (서울시)</h3>
+                    <p>산후조리원·산후도우미·의약품 등에 쓸 수 있는 바우처. 지자체별로 달라요.</p>
+                </div>
+                <div class="b-amount">100만원<small>서울시 기준</small></div>
+            </a>
+
+            <!-- 0~1세 -->
+            <a href="https://www.bokjiro.go.kr/" target="_blank" rel="noopener" class="b-card" data-cat="baby">
+                <div class="b-icon">💰</div>
+                <div class="b-body">
+                    <span class="b-cat cat-blue">0~1세</span>
+                    <h3>부모급여</h3>
+                    <p>0세 아기를 키우는 부모에게 매달 지급돼요. 어린이집 이용 시 보육료로 전환.</p>
+                </div>
+                <div class="b-amount">월 100만원<small>1세는 월 50만원</small></div>
+            </a>
+            <a href="https://www.bokjiro.go.kr/" target="_blank" rel="noopener" class="b-card" data-cat="baby">
+                <div class="b-icon">🎁</div>
+                <div class="b-body">
+                    <span class="b-cat cat-blue">0~1세</span>
+                    <h3>아동수당</h3>
+                    <p>만 8세 미만 모든 아동에게 매달 지급. 부모급여와 중복 수령 가능해요.</p>
+                </div>
+                <div class="b-amount">월 10만원<small>만 8세 미만</small></div>
+            </a>
+            <a href="https://www.moel.go.kr/" target="_blank" rel="noopener" class="b-card" data-cat="baby">
+                <div class="b-icon">👨‍👩‍👧</div>
+                <div class="b-body">
+                    <span class="b-cat cat-blue">0~1세</span>
+                    <h3>6+6 부모육아휴직제</h3>
+                    <p>생후 18개월 내 부모가 함께(또는 차례로) 육아휴직하면 첫 6개월 급여가 크게 올라요.</p>
+                </div>
+                <div class="b-amount">월 최대 450만원<small>부모 각각, 6개월 차 기준</small></div>
+            </a>
+            <a href="https://www.moel.go.kr/" target="_blank" rel="noopener" class="b-card" data-cat="baby">
+                <div class="b-icon">🏢</div>
+                <div class="b-body">
+                    <span class="b-cat cat-blue">0~1세</span>
+                    <h3>육아휴직 급여</h3>
+                    <p>육아휴직 기간 통상임금 100%를 상한액 내에서 지급. 사후지급금 없이 매달 전액.</p>
+                </div>
+                <div class="b-amount">월 최대 250만원<small>1~3개월차 기준</small></div>
+            </a>
+
+            <!-- 보육·아동 -->
+            <a href="https://www.bokjiro.go.kr/" target="_blank" rel="noopener" class="b-card" data-cat="child">
+                <div class="b-icon">🏫</div>
+                <div class="b-body">
+                    <span class="b-cat cat-mint">보육·아동</span>
+                    <h3>보육료·유아학비 지원</h3>
+                    <p>어린이집·유치원 이용 시 보육료를 지원받아요. 국민행복카드로 결제됩니다.</p>
+                </div>
+                <div class="b-amount">전액~<small>연령·기관별 상이</small></div>
+            </a>
+            <a href="https://www.bokjiro.go.kr/" target="_blank" rel="noopener" class="b-card" data-cat="child">
+                <div class="b-icon">🏠</div>
+                <div class="b-body">
+                    <span class="b-cat cat-mint">보육·아동</span>
+                    <h3>가정양육수당</h3>
+                    <p>어린이집·유치원을 이용하지 않고 가정에서 키울 때 지급돼요.</p>
+                </div>
+                <div class="b-amount">월 10만원<small>24개월 이후</small></div>
+            </a>
+            <a href="https://idolbom.go.kr/" target="_blank" rel="noopener" class="b-card" data-cat="child">
+                <div class="b-icon">🧸</div>
+                <div class="b-body">
+                    <span class="b-cat cat-mint">보육·아동</span>
+                    <h3>아이돌봄 서비스</h3>
+                    <p>맞벌이 가정 등에 돌보미가 찾아와요. 소득 구간에 따라 이용료를 지원.</p>
+                </div>
+                <div class="b-amount">최대 90% 지원<small>소득 구간별</small></div>
+            </a>
+
+            <!-- 다자녀·생활 -->
+            <a href="https://www.gov.kr/" target="_blank" rel="noopener" class="b-card" data-cat="extra">
+                <div class="b-icon">💳</div>
+                <div class="b-body">
+                    <span class="b-cat cat-gold">다자녀·생활</span>
+                    <h3>다자녀 카드 혜택 (다둥이 행복카드 등)</h3>
+                    <p>2자녀 이상 가정에 문화·교통·쇼핑 할인. 지자체별 이름과 혜택이 달라요.</p>
+                </div>
+                <div class="b-amount">최대 50% 할인<small>지자체별 상이</small></div>
+            </a>
+            <a href="https://online.kepco.co.kr/" target="_blank" rel="noopener" class="b-card" data-cat="extra">
+                <div class="b-icon">⚡</div>
+                <div class="b-body">
+                    <span class="b-cat cat-gold">다자녀·생활</span>
+                    <h3>출산가구 전기요금 할인</h3>
+                    <p>출생일로부터 3년 미만 아기가 있는 집은 한전에 신청하면 매달 할인돼요.</p>
+                </div>
+                <div class="b-amount">월 30%<small>최대 16,000원</small></div>
+            </a>
+            <a href="https://www.seoul.go.kr/" target="_blank" rel="noopener" class="b-card" data-cat="extra">
+                <div class="b-icon">🌟</div>
+                <div class="b-body">
+                    <span class="b-cat cat-gold">다자녀·생활</span>
+                    <h3>서울아기 건강 첫걸음</h3>
+                    <p>간호사가 집으로 찾아와 아기 발달과 산모 건강을 살펴주는 무료 서비스예요.</p>
+                </div>
+                <div class="b-amount">무료<small>서울시 · 방문 건강관리</small></div>
+            </a>
+        </div>
+
+        <div class="check-banner">
+            <h3>내가 받을 수 있는 혜택, 한 번에 조회하기</h3>
+            <p>보조금24에 로그인하면 우리 가족이 받을 수 있는 혜택을 맞춤으로 보여줘요.</p>
+            <a href="https://www.gov.kr/portal/rcvfvrSvc/main" target="_blank" rel="noopener" class="btn primary">보조금24에서 조회하기 →</a>
+        </div>
+
+        <div class="disclaimer-box">
+            ⚠️ 지원 금액과 기준은 정책에 따라 바뀔 수 있어요. 신청 전 반드시 공식 사이트(복지로·정부24)에서 최신 기준을 확인해주세요.
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <a href="/">SNOVAHA</a> — 임신부터 육아까지, 모든 순간을 함께합니다
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

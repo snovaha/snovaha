@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SNOVAHA · 육아의 모든 것</title>
+    <meta name="description" content="SNOVAHA — 임신부터 육아까지, 모든 순간을 함께합니다. 각도법 성별 예측, 모바일 초대장, 육아 혜택 모음.">
+    <title>SNOVAHA · 임신부터 육아까지, 모든 순간을 함께</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="assets/css/home.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -27,10 +25,8 @@
                             </feMerge>
                         </filter>
                     </defs>
-                    <!-- 글로우 스타 듀얼 -->
                     <path d="M15 8 L17 15 L24 16 L19 20 L21 27 L15 23 L9 27 L11 20 L6 16 L13 15 Z" fill="#60a5fa" filter="url(#glow-star)" opacity="0.9"/>
                     <path d="M22 11 L24 18 L31 19 L26 23 L28 30 L22 26 L16 30 L18 23 L13 19 L20 18 Z" fill="#c084fc" filter="url(#glow-star)" opacity="0.7"/>
-                    <!-- 텍스트 -->
                     <text x="46" y="26" font-family="Pretendard, sans-serif" font-size="20" font-weight="800" fill="currentColor">SNOVAHA</text>
                 </svg>
             </a>
@@ -42,92 +38,102 @@
             </div>
         </div>
     </nav>
-    <!-- Home Hero -->
+
+    <!-- Hero -->
     <section id="home-hero" class="home-hero">
         <div class="home-hero-inner">
             <h1 class="brand">SNOVAHA</h1>
             <p class="tagline">임신부터 육아까지, 모든 순간을 함께합니다</p>
-            <p class="tagline-sub">초대장 제작, 성별 예측, 육아 혜택, 커뮤니티까지</p>
+            <p class="tagline-sub">우주처럼 빛나는 우리 아이의 성장을 담는 곳</p>
+            <div class="hero-cta">
+                <a href="/nub-theory/" class="btn primary">👶 아기 성별 예측해보기</a>
+                <a href="/benefits/" class="btn outline">🎁 육아 혜택 모아보기</a>
+            </div>
         </div>
     </section>
 
-    <!-- Services Grid -->
-    <section id="services" class="services">
-        <h2 class="section-title">SNOVAHA의 서비스</h2>
+    <!-- Services -->
+    <section id="services" class="section">
+        <h2 class="section-title reveal">SNOVAHA의 서비스</h2>
+        <p class="section-sub reveal">아이와 함께하는 여정의 순간마다, 필요한 것들을 모았어요</p>
         <div class="services-grid">
-            <a href="/invitation/" class="service-card">
-                <div class="service-icon">🎉</div>
-                <h3>돌잔치 초대장</h3>
-                <p>감성적인 모바일 초대장</p>
-            </a>
-            <a href="/nub-theory/" class="service-card">
+            <a href="/nub-theory/" class="service-card c-pink reveal">
                 <div class="service-icon">👶</div>
                 <h3>각도법</h3>
-                <p>임신 초기 성별 예측</p>
+                <p>초음파 사진 속 각도로 만나는 아기의 첫 번째 힌트</p>
+                <span class="card-link">예측해보기 →</span>
             </a>
-            <a href="/benefits/" class="service-card service-card-highlight">
+            <a href="/invitation/" class="service-card c-blue reveal">
+                <div class="service-icon">🎉</div>
+                <h3>돌잔치 초대장</h3>
+                <p>소중한 날을 담은 감성 모바일 초대장</p>
+                <span class="card-link">구경하기 →</span>
+            </a>
+            <a href="/benefits/" class="service-card c-gold reveal">
                 <div class="service-icon">🎁</div>
                 <h3>육아 혜택</h3>
-                <p>정부 지원금 & 할인</p>
+                <p>놓치면 아까운 정부 지원금과 할인 총정리</p>
+                <span class="card-link">혜택 챙기기 →</span>
                 <span class="badge">인기</span>
             </a>
-            <a href="/community/" class="service-card">
+            <a href="/community/" class="service-card c-purple reveal">
                 <div class="service-icon">💬</div>
                 <h3>커뮤니티</h3>
-                <p>육아 팁 & 정보 공유</p>
+                <p>부모들의 이야기와 육아 팁이 모이는 곳</p>
+                <span class="card-link">미리보기 →</span>
             </a>
         </div>
     </section>
 
-    <!-- Latest Benefits (간단 광고 섹션) -->
-    <section id="latest" class="latest-section">
-        <div class="latest-header">
-            <h2>🔥 놓치면 안 될 육아 혜택</h2>
-            <a href="/benefits/" class="link-more">모든 혜택 보기 →</a>
+    <!-- 각도법 하이라이트 -->
+    <section class="section">
+        <div class="feature-banner reveal">
+            <span class="fb-eyebrow">✨ NEW · 각도법 측정 도구 오픈</span>
+            <h3>오늘, 뱃속 아기의<br>첫 번째 힌트를 확인해보세요</h3>
+            <p>초음파 사진 위에 선 두 개만 맞추면, 두근거리는 결과가 기다리고 있어요.</p>
+            <a href="/nub-theory/" class="btn primary">두근두근, 시작하기</a>
+            <span class="fb-privacy">🔒 사진은 기기 안에서만 처리되고 어디에도 전송되지 않아요</span>
         </div>
+    </section>
+
+    <!-- 혜택 티저 -->
+    <section id="latest" class="section">
+        <h2 class="section-title reveal">놓치면 안 될 육아 혜택</h2>
+        <p class="section-sub reveal">신청만 해도 받을 수 있는 혜택, 지금 확인하세요</p>
         <div class="benefits-grid">
-            <a href="https://www.bokjiro.go.kr/" target="_blank" class="benefit-card benefit-card-1">
+            <a href="https://www.bokjiro.go.kr/" target="_blank" rel="noopener" class="benefit-card reveal">
                 <div class="benefit-icon">🎫</div>
                 <h4>첫만남 이용권</h4>
-                <p>200만원</p>
-                <span class="benefit-note">출생 후 신청</span>
+                <p class="amount">200만원~</p>
+                <span class="benefit-note">출생 후 신청 · 둘째부터 300만원</span>
             </a>
-            <a href="https://www.moel.go.kr/" target="_blank" class="benefit-card benefit-card-2">
+            <a href="https://www.moel.go.kr/" target="_blank" rel="noopener" class="benefit-card reveal">
                 <div class="benefit-icon">👨‍👩‍👧</div>
                 <h4>6+6 부모육아휴직제</h4>
-                <p>월 450만원</p>
-                <span class="benefit-note">동시 사용 시</span>
+                <p class="amount">월 최대 450만원</p>
+                <span class="benefit-note">부모 함께 사용 시</span>
             </a>
-            <a href="https://www.bokjiro.go.kr/" target="_blank" class="benefit-card benefit-card-3">
+            <a href="https://www.bokjiro.go.kr/" target="_blank" rel="noopener" class="benefit-card reveal">
                 <div class="benefit-icon">💰</div>
                 <h4>부모급여</h4>
-                <p>월 100만원</p>
-                <span class="benefit-note">0~1세</span>
+                <p class="amount">월 100만원</p>
+                <span class="benefit-note">0세 기준 · 1세는 월 50만원</span>
             </a>
-            <a href="https://www.bokjiro.go.kr/" target="_blank" class="benefit-card benefit-card-4">
-                <div class="benefit-icon">🎁</div>
-                <h4>아동수당</h4>
-                <p>월 10만원</p>
-                <span class="benefit-note">만 8세 미만</span>
-            </a>
-            <a href="https://www.dd.go.kr/" target="_blank" class="benefit-card benefit-card-5">
-                <div class="benefit-icon">💳</div>
-                <h4>다둥이 행복카드</h4>
-                <p>최대 50% 할인</p>
-                <span class="benefit-note">2자녀 이상</span>
-            </a>
-            <a href="https://www.seoul.go.kr/" target="_blank" class="benefit-card benefit-card-6">
-                <div class="benefit-icon">🌟</div>
-                <h4>서울아기 건강첫걸음</h4>
-                <p>70만원 지원</p>
-                <span class="benefit-note">서울시</span>
-            </a>
+        </div>
+        <div class="section-more reveal">
+            <a href="/benefits/" class="btn outline">모든 혜택 보기 →</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <p>© 2025 SNOVAHA · all rights reserved</p>
+        <div class="footer-links">
+            <a href="/invitation/">초대장</a>
+            <a href="/nub-theory/">각도법</a>
+            <a href="/benefits/">육아혜택</a>
+            <a href="/community/">커뮤니티</a>
+        </div>
+        <p>© 2026 SNOVAHA · 임신부터 육아까지, 모든 순간을 함께합니다</p>
     </footer>
 
     <script src="assets/js/home.js"></script>
